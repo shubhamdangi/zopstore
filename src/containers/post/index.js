@@ -5,6 +5,7 @@ import { Comments } from "../../components";
 import { db, storage } from "../../firebase";
 import { CommentInput } from "../../components";
 import { UserContext } from "../../contexts/user";
+import { Delete } from "../../components";
 
 export default function Post({
   profileUrl,
@@ -15,6 +16,7 @@ export default function Post({
   comments,
 }) {
   const [user, setUser] = useContext(UserContext).user;
+  const uname = user.email.replace("@gmail.com", "").toLowerCase();
 
   const deletePost = () => {
     // delete the image from firebase storage
@@ -44,15 +46,7 @@ export default function Post({
       });
   };
 
-  // function checkDel() {
-  //   {
-  //     if (username === user.username) {
-  //       return deletePost();
-  //     } else {
-  //       return null;
-  //     }
-  //   }
-  // }
+  //validate the logged user and owner of post to display delete button on line 59
 
   {
     return (
@@ -62,8 +56,7 @@ export default function Post({
             <img className="dp" src={profileUrl} alt="user_photo" />
             <p style={{ marginLeft: "9px" }}>{username}</p>
           </div>
-
-          {user ? (
+          {username === uname ? (
             <div className="btn">
               <Button onClick={deletePost} color="primary">
                 Delete
