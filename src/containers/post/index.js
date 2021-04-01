@@ -16,7 +16,14 @@ export default function Post({
   comments,
 }) {
   const [user, setUser] = useContext(UserContext).user;
-  const uname = user.email.replace("@gmail.com", "").toLowerCase();
+
+  var uname = " ";
+  // to prevent app crash if user is null
+  if (user) {
+    uname = user.email.replace("@gmail.com", "").toLowerCase();
+  } else {
+    uname = "no user";
+  }
 
   const deletePost = () => {
     // delete the image from firebase storage
@@ -56,7 +63,7 @@ export default function Post({
             <img className="dp" src={profileUrl} alt="user_photo" />
             <p style={{ marginLeft: "9px" }}>{username}</p>
           </div>
-          {username === uname ? (
+          {user && username === uname ? (
             <div className="btn">
               <Button onClick={deletePost} color="primary">
                 Delete
