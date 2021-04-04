@@ -1,0 +1,35 @@
+.dp{
+    height: 42px;
+    border-radius: 21px;
+    width: 42px;
+    margin: 12px 12px 12px 5px;
+}
+.info{
+    display: flex;
+    align-items: center;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+
+}
+.del{
+    margin: 0;
+}
+
+.card {
+    width: 14rem;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .card:hover {
+    border: 1.8px solid #333333;
+    /* overflow: hidden; */
+  }
+  
+
+/* 
+.card{  -moz-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); transition:0.7s ease all; -webkit-transition:0.7s ease all; -moz-transition:0.7s ease all;}
+
+.card:hover{ -moz-transform: scale(1); -webkit-transform: scale(1); transform: scale(1.05);} */
