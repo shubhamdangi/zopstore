@@ -5,24 +5,35 @@ import { Comments } from "../../components";
 import { db, storage } from "../../firebase";
 import { CommentInput } from "../../components";
 import { UserContext } from "../../contexts/user";
-import { Delete } from "../../components";
-import { Card1 } from "..";
+// import { Delete } from "../../components";
+// import { Card1 } from "..";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 import ShareIcon from "@material-ui/icons/Share";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import DoneOutlineIcon from "@material-ui/icons/DoneOutline";
 
 import Signin from "../Signin";
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
-import Favorite from "@material-ui/icons/Favorite";
-import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
+// import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+// import CheckBoxIcon from "@material-ui/icons/CheckBox";
+// import Favorite from "@material-ui/icons/Favorite";
+// import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
+
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+// import DialogContent from "@material-ui/core/DialogContent";
+// import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function Post({
   profileUrl,
@@ -37,21 +48,33 @@ export default function Post({
   time,
 }) {
   const [user, setUser] = useContext(UserContext).user;
-  const [no, setNo] = useState("Bet on this product");
-  const [yes, setYes] = useState("Bet on this product");
+  const [no, setNo] = useState("Call to make an offer");
+  const [yes, setYes] = useState("Call to make an offer");
   const [clicked, setClicked] = useState(false);
+  const [open1, setOpen1] = useState(false);
 
   function handleLove() {
     setClicked(true);
   }
 
   function noclick() {
-    setNo("Sign in to mao");
+    setNo("Sign in to Call User");
   }
 
   function yesclick() {
-    setYes("Call +91 " + contact);
+    setYes("Contact: +91 " + contact);
   }
+
+  //modal begin
+
+  const handleClickOpen = () => {
+    setOpen1(true);
+  };
+
+  const handleClose = () => {
+    setOpen1(false);
+  };
+  //modal end
 
   var uname = " ";
   // to prevent app crash if user is null
@@ -129,10 +152,29 @@ export default function Post({
                 </div>
 
                 {user && username === uname ? (
-                  <div className="btn">
-                    <IconButton onClick={deletePost} className="del">
+                  <div>
+                    <IconButton onClick={handleClickOpen}>
                       <DeleteIcon />
                     </IconButton>
+                    <Dialog
+                      open={open1}
+                      TransitionComponent={Transition}
+                      keepMounted
+                      onClose={handleClose}
+                      aria-labelledby="alert-dialog-slide-title"
+                      aria-describedby="alert-dialog-slide-description"
+                    >
+                      <DialogTitle id="alert-dialog-slide-title">
+                        {"Are you sure you want to Delete this post?"}
+                      </DialogTitle>
+
+                      <DialogActions>
+                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button onClick={deletePost} color="secondary">
+                          Delete
+                        </Button>
+                      </DialogActions>
+                    </Dialog>
                   </div>
                 ) : (
                   <FormControlLabel
@@ -157,15 +199,40 @@ export default function Post({
                     justifyContent: "space-between",
                   }}
                 >
-                  <h5 class="card-title">
-                    ${price}
-                    {price === "FREE" ? <CheckCircleIcon /> : <></>}
-                  </h5>
+                  <div className="price1" style={{ alignItems: "center" }}>
+                    <h5 class="card-title">
+                      {price === "FREE" ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <p style={{ margin: "2px 0 0 0", color: "green" }}>
+                            {price}
+                          </p>{" "}
+                          <DoneOutlineIcon style={{ color: "green" }} />
+                        </div>
+                      ) : (
+                        <p style={{ margin: "0", padding: "0" }}>₹ {price}</p>
+                      )}
+                    </h5>
+                  </div>
                   <IconButton style={{ margin: "0", padding: "0" }}>
                     <ShareIcon />
                   </IconButton>
                 </div>
-                <p style={{ margin: "0", padding: "0" }}> {title}</p>
+                <p
+                  style={{
+                    margin: "0",
+                    padding: "0",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {" "}
+                  {title}
+                </p>
                 <p>{caption}</p>
 
                 <div
