@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import { Button } from "@material-ui/core";
 import PublicIcon from "@material-ui/icons/Public";
 import TextField from "@material-ui/core/TextField";
 import firebase from "firebase";
@@ -12,6 +11,13 @@ import Checkbox from "@material-ui/core/Checkbox";
 import SendIcon from "@material-ui/icons/Send";
 import { withStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
+// for alert
+import Alert from "@material-ui/lab/Alert";
+import IconButton from "@material-ui/core/IconButton";
+import Collapse from "@material-ui/core/Collapse";
+import Button from "@material-ui/core/Button";
+import CloseIcon from "@material-ui/icons/Close";
+// for alert end
 
 import { UserContext } from "../../contexts/user";
 import Signin from "../Signin";
@@ -34,6 +40,12 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(0.5),
     padding: theme.spacing(2, 4, 3),
   },
+  root: {
+    width: "100%",
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
 }));
 
 function ComposeModal() {
@@ -48,6 +60,8 @@ function ComposeModal() {
   const [image, setImage] = useState(null);
   const [progress, setProgess] = useState(0);
   const [check, setCheck] = useState(true);
+  const [openAlert, setOpenAlert] = React.useState(false);
+  const classesAlert = useStyles();
 
   const handleOpen = () => {
     setOpen(true);
@@ -214,21 +228,37 @@ function ComposeModal() {
             <Fade in={open}>
               <div className={classes.paper}>
                 <h2 id="transition-modal-title" style={{ textAlign: "center" }}>
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; POST YOUR AD
-                  NOW. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  POST YOUR AD NOW.
                 </h2>
                 <p id="transition-modal-description"></p>
                 <form onSubmit={handleUpload} className={classes.root}>
-                  <TextField
+                  {/* <TextField
                     name="title"
                     id="outlined-basic"
                     label="Title"
+                    maxlength="25"
                     variant="outlined"
                     placeholder="Product Name or Title"
                     value={title}
                     autoComplete="off"
                     onChange={(e) => setTitle(e.currentTarget.value)}
-                  />
+                  /> */}
+                  {/* //check */}
+                  <div class="form-group" style={{ margin: "0", padding: "0" }}>
+                    <label for="exampleFormControlTextarea1"></label>
+                    <p style={{ margin: "0", padding: "0" }}>Title*</p>
+                    <textarea
+                      value={title}
+                      style={{ margin: "0", padding: "3px" }}
+                      onChange={(e) => setTitle(e.currentTarget.value)}
+                      name="title"
+                      maxlength="30"
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                      placeholder="Product Title or Name"
+                    ></textarea>
+                  </div>
                   {/* &nbsp; &nbsp; {""} */}
                   <div class="form-group" style={{ margin: "0", padding: "0" }}>
                     <label for="exampleFormControlTextarea1"></label>
@@ -237,6 +267,7 @@ function ComposeModal() {
                       value={caption}
                       onChange={(e) => setCaption(e.currentTarget.value)}
                       name="caption"
+                      maxlength="60"
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
@@ -245,16 +276,17 @@ function ComposeModal() {
                   </div>
                   <div class="form-group" style={{ margin: "0", padding: "0" }}>
                     <label for="exampleFormControlTextarea1"></label>
-                    <p style={{ margin: "0", padding: "0" }}>$ Price*</p>
+                    <p style={{ margin: "0", padding: "0" }}>₹ Price*</p>
                     <textarea
                       value={price}
+                      style={{ margin: "0", padding: "3px" }}
                       onChange={(e) => setPrice(e.currentTarget.value)}
                       name="price"
-                      maxlength="4"
+                      maxlength="5"
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
-                      placeholder="Set Price $"
+                      placeholder="Set Price in ₹"
                     ></textarea>
                     <FormControlLabel
                       control={
@@ -267,6 +299,7 @@ function ComposeModal() {
                       label="Donate for Free."
                     />
                   </div>
+
                   <div
                     class="form-group"
                     style={{ margin: "0", padding: "0 0 6px 0" }}
@@ -276,6 +309,7 @@ function ComposeModal() {
                     <textarea
                       value={contact}
                       type="number"
+                      style={{ margin: "0", padding: "3px" }}
                       onChange={(e) => setContact(e.currentTarget.value)}
                       name="contact"
                       maxlength="10"
@@ -292,25 +326,35 @@ function ComposeModal() {
                           <AddAPhotoIcon />
                         </label>
                       </Button>
+
                       <input
                         id="fileinput"
                         type="file"
                         accept="image/*"
                         onChange={handleChange}
                       />
+                      <p id="simple-modal-description" style={{ color: "red" }}>
+                        image size should be Less then 1 MB*
+                      </p>
                     </div>
-                    <Button
-                      onClick={() => {
-                        time1();
-                        setTimeout(handleClose(), 5000); // capture current date and time
-                      }}
-                      variant="contained"
-                      color="secondary"
-                      type="submit"
-                      disabled={!(caption && title && price && contact)}
+                    <div
+                      className="uploadBtn"
+                      style={{ textAlign: "right", paddingTop: "10px" }}
                     >
-                      Upload {progress != 0 ? progress : ""}
-                    </Button>
+                      <Button
+                        onClick={() => {
+                          time1();
+                          setTimeout(handleClose(), 5000); // capture current date and time
+                          setOpenAlert(true);
+                        }}
+                        variant="contained"
+                        color="secondary"
+                        type="submit"
+                        disabled={!(caption && title && price && contact)}
+                      >
+                        Upload {progress != 0 ? progress : ""}
+                      </Button>
+                    </div>
                   </div>
                   <div className="composeImage">
                     <img id="imagePreview" alt="demo" />
@@ -319,6 +363,33 @@ function ComposeModal() {
               </div>
             </Fade>
           </Modal>
+          <div className={classesAlert.root}>
+            <Collapse
+              in={openAlert}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                padding: "10px 0 15px 0",
+              }}
+            >
+              <Alert
+                action={
+                  <IconButton
+                    aria-label="close"
+                    color="inherit"
+                    size="small"
+                    onClick={() => {
+                      setOpenAlert(false);
+                    }}
+                  >
+                    <CloseIcon fontSize="inherit" />
+                  </IconButton>
+                }
+              >
+                Ad Posted Successfully! But it may take few Seconds to appear.
+              </Alert>
+            </Collapse>
+          </div>
         </>
       ) : (
         <Signin />

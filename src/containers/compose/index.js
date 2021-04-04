@@ -178,6 +178,7 @@ export default function Compose() {
                   <AddAPhotoIcon />
                 </label>
               </Button>
+
               <input
                 id="fileinput"
                 type="file"
@@ -185,6 +186,7 @@ export default function Compose() {
                 onChange={handleChange}
               />
             </div>
+
             <Button
               onClick={() => {
                 time1();

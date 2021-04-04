@@ -30,7 +30,7 @@
 }
 
 .postPhoto{
-width: 100%;
+width: 96%;
 object-fit: cover;
 margin: 10px;
 }
@@ -45,7 +45,7 @@ margin: 10px;
 .card:hover{ -moz-transform: scale(1); -webkit-transform: scale(1); transform: scale(1.05);}
    
 
-}
-   */
+} */
+  
 
 
