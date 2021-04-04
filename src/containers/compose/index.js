@@ -10,7 +10,11 @@ import firebase from "firebase";
 
 export default function Compose() {
   const [user, setUser] = useContext(UserContext).user;
+  const [title, setTitle] = useState("");
   const [caption, setCaption] = useState("");
+  const [price, setPrice] = useState("");
+  const [contact, setContact] = useState("");
+  const [time, setTime] = useState("");
   const [image, setImage] = useState(null);
   const [progress, setProgess] = useState(0);
 
@@ -44,6 +48,10 @@ export default function Compose() {
             .then((imageUrl) => {
               db.collection("posts").add({
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                time: time,
+                price: price,
+                contact: contact,
+                title: title,
                 caption: caption,
                 photoUrl: imageUrl,
                 username: user.email.replace("@gmail.com", ""),
@@ -52,6 +60,10 @@ export default function Compose() {
             });
 
           setCaption("");
+
+          setTitle("");
+          setPrice("");
+          setContact("");
           setProgess(0);
           setImage(null);
 
@@ -75,6 +87,47 @@ export default function Compose() {
     }
   }
 
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // const weekday1 = [
+  //   "Sunday",
+  //   "Monday",
+  //   "Tuesday",
+  //   "Wednesday",
+  //   "Thursday",
+  //   "Friday",
+  //   "Saturday",
+  // ];
+
+  var currentdate = new Date();
+  var datetime =
+    monthNames[currentdate.getMonth()] +
+    " " +
+    currentdate.getDate() +
+    " · " +
+    currentdate.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+
+  function time1() {
+    setTime(datetime);
+  }
+
   return (
     <div className="compose">
       {user ? (
@@ -84,10 +137,35 @@ export default function Compose() {
           <div className="compose__loggedinCentre">
             <textarea
               className="compose__text"
-              rows="8"
-              placeholder="enter caption"
+              rows="1"
+              placeholder="Title of the Product or Book"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            ></textarea>
+
+            <textarea
+              className="compose__text"
+              rows="3"
+              placeholder="Enter the Description"
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
+            ></textarea>
+
+            <textarea
+              className="compose__text"
+              rows="1"
+              placeholder="Set the Price for the Product or Book"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            ></textarea>
+
+            <textarea
+              type="number"
+              className="compose__text"
+              rows="1"
+              placeholder="Contact Number of the owner"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
             ></textarea>
           </div>
           <div className="composeImage">
@@ -108,11 +186,14 @@ export default function Compose() {
               />
             </div>
             <Button
-              onClick={handleUpload}
+              onClick={() => {
+                time1();
+                handleUpload(); // capture current date and time
+              }}
               variant="contained"
               color="secondary"
               type="submit"
-              disabled={!caption}
+              disabled={!(caption && title && price && contact)}
             >
               Upload {progress != 0 ? progress : ""}
             </Button>
