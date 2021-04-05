@@ -4,11 +4,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import PublicIcon from "@material-ui/icons/Public";
-import TextField from "@material-ui/core/TextField";
 import firebase from "firebase";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import SendIcon from "@material-ui/icons/Send";
 import { withStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
 // for alert
@@ -340,6 +338,7 @@ function ComposeModal() {
                         }}
                         onChange={(e) => setPrice(e.currentTarget.value)}
                         name="price"
+                        autocomplete="off"
                         maxlength="5"
                         class="form-control"
                         id="exampleFormControlTextarea1"
@@ -347,6 +346,7 @@ function ComposeModal() {
                         placeholder="Set Price in ₹"
                       ></input>
                       <FormControlLabel
+                        style={{ marginRight: "0" }}
                         control={
                           <GreenCheckbox
                             //   checked={free}
@@ -372,7 +372,7 @@ function ComposeModal() {
                       style={{ margin: "0", width: "40vh", padding: "3px" }}
                       onChange={(e) => setContact(e.currentTarget.value)}
                       name="contact"
-                      // maxlength="10"
+                      autocomplete="off"
                       maxlength="10"
                       class="form-control"
                       id="exampleFormControlTextarea1"
@@ -401,6 +401,7 @@ function ComposeModal() {
                         type="file"
                         accept="image/*"
                         onChange={handleChange}
+                        style={{ display: "none" }}
                       />
                       <p
                         id="simple-modal-description"
