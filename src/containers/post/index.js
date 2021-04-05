@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import Button from "@material-ui/core/Button";
 import "./style.css";
-import { Comments } from "../../components";
+// import { Comments } from "../../components";
 import { db, storage } from "../../firebase";
-import { CommentInput } from "../../components";
+// import { CommentInput } from "../../components";
 import { UserContext } from "../../contexts/user";
-// import { Delete } from "../../components";
-// import { Card1 } from "..";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
@@ -19,17 +18,14 @@ import Signin from "../Signin";
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-// import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-// import CheckBoxIcon from "@material-ui/icons/CheckBox";
-// import Favorite from "@material-ui/icons/Favorite";
-// import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-// import DialogContent from "@material-ui/core/DialogContent";
-// import DialogContentText from "@material-ui/core/DialogContentText";
+
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import { WhatsappShareButton } from "react-share";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -62,7 +58,7 @@ export default function Post({
   }
 
   function yesclick() {
-    setYes("Contact: +91 " + contact);
+    setYes("Call: +91 " + contact);
   }
 
   //modal begin
@@ -131,7 +127,7 @@ export default function Post({
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
-            <div class="card" style={{ width: "21em" }}>
+            <div class="card" style={{ width: "18em" }}>
               <div className="header">
                 <div className="info">
                   <img class="dp" src={profileUrl} alt="dp" />
@@ -220,7 +216,9 @@ export default function Post({
                     </h5>
                   </div>
                   <IconButton style={{ margin: "0", padding: "0" }}>
-                    <ShareIcon />
+                    <WhatsappShareButton title={title} separator=" ">
+                      <WhatsAppIcon />
+                    </WhatsappShareButton>
                   </IconButton>
                 </div>
                 <p

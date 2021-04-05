@@ -1,0 +1,22 @@
+
+  
+  nav{
+    background: #14406d;
+    height: 50px;
+    width: 100%;
+    position: fixed ;
+    z-index: 100;
+  }
+  label.logo{
+    color: #f9f871;
+    font-size: 4vh;
+    line-height: 80px;
+    padding: 0 0 0 20px;
+    font-weight: 600;
+  }
+  .userInfo{
+    float: right;
+    margin-right: 20px;
+  }
+  
+ 

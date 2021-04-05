@@ -1,5 +1,11 @@
 import React from "react";
-import { Card1, ComposeModal, Navbar, Scroll } from "../../containers";
+import {
+  Carousel1,
+  ComposeModal,
+  Footer,
+  Navbar1,
+  Scroll,
+} from "../../containers";
 import Compose from "../../containers/compose";
 import Feed from "../../containers/feed";
 import "./style.css";
@@ -7,10 +13,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Home() {
   return (
     <div className="home">
-      <Navbar />
+      <Navbar1 />
+      <Carousel1 />
       <ComposeModal />
       <Feed />
       <Scroll showBelow={550} />
+      <Footer />
     </div>
   );
 }
