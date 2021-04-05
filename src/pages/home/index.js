@@ -6,13 +6,11 @@ import {
   Navbar1,
   Scroll,
 } from "../../containers";
-import Compose from "../../containers/compose";
 import Feed from "../../containers/feed";
-import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 function Home() {
   return (
-    <div className="home">
+    <div className="home" style={{ backgroundColor: "#f7f7f2" }}>
       <Navbar1 />
       <Carousel1 />
       <ComposeModal />

@@ -20,8 +20,6 @@ export default function Feed() {
   }, []);
 
   return (
-    // <div className="container">
-    // <div className="row">
     <div className="feed ">
       {posts.map(({ id, post }) => {
         return (

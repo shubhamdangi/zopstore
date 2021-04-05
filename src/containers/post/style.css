@@ -37,7 +37,7 @@ margin: 10px;
 
 /* to zoom card on hover */
 
-/* @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
    
 
     .card:hover {
@@ -50,7 +50,7 @@ margin: 10px;
 .card:hover{ -moz-transform: scale(1); -webkit-transform: scale(1); transform: scale(1.05);}
    
 
-} */
+}
   
 
 

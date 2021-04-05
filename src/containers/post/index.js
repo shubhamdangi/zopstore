@@ -1,20 +1,15 @@
 import React, { useContext, useState } from "react";
 import Button from "@material-ui/core/Button";
 import "./style.css";
-// import { Comments } from "../../components";
 import { db, storage } from "../../firebase";
-// import { CommentInput } from "../../components";
 import { UserContext } from "../../contexts/user";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
-import ShareIcon from "@material-ui/icons/Share";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import DoneOutlineIcon from "@material-ui/icons/DoneOutline";
-
-import Signin from "../Signin";
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -46,12 +41,7 @@ export default function Post({
   const [user, setUser] = useContext(UserContext).user;
   const [no, setNo] = useState("Call to make an offer");
   const [yes, setYes] = useState("Call to make an offer");
-  const [clicked, setClicked] = useState(false);
   const [open1, setOpen1] = useState(false);
-
-  function handleLove() {
-    setClicked(true);
-  }
 
   function noclick() {
     setNo("Sign in to Call User");
@@ -107,20 +97,6 @@ export default function Post({
         console.log(`firestore del err is ${error}`);
       });
   };
-
-  // let maoVal = "Bet this product Now 1";
-  // let maoValout = "Bet this product Now 0";
-
-  // function outt(user) {
-  //   maoValout = "SIGN IN TO CONTINUE";
-  //   return maoValout;
-  // }
-
-  // function inn() {
-  //   maoVal = contact;
-  //   return maoVal;
-  // }
-  //validate the logged user and owner of post to display delete button on line 59
 
   {
     return (
@@ -254,10 +230,6 @@ export default function Post({
                       {no}
                     </button>
                   )}
-
-                  {/* <button type="button" class="btn btn-outline-info btn-lg btn-block">
-              Bet on this product
-            </button> */}
                 </div>
               </div>
             </div>

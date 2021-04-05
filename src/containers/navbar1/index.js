@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../../contexts/user";
 import "./style.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,10 +16,6 @@ export default function Navbar1() {
           flex: "wrap",
         }}
       >
-        {/* <input type="checkbox" id="check"></input>
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label> */}
         <label class="logo" style={{ flex: "50%" }}>
           PenX
         </label>
@@ -60,28 +56,8 @@ export default function Navbar1() {
             <p style={{ margin: 0, padding: "0", color: "#dfdfdf" }}>
               Hello User!
             </p>
-            {/* <p> Sign in</p> */}
           </div>
         )}
-
-        {/* {user ? (
-          <>
-            <img className="dp" src={user.photoURL} />
-          </>
-        ) : (
-          <p>Sign in</p>
-        )} */}
-
-        {/* <p
-          style={{
-            flex: "50%",
-            textAlign: "right",
-            marginRight: "1rem",
-            padding: "0",
-          }}
-        >
-          Hello USER
-        </p> */}
       </nav>
       <section></section>
     </>
