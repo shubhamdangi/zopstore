@@ -1,11 +1,15 @@
 .signin {
+    /* display: flex; */
     text-align: center;
     /* display: flex; */
     align-items: center;
-    padding: 25px;
+    justify-content: center;
+    padding: 6vh 0 6vh 0;
     margin: auto;
     
 }
-.msg{
+/* .msg{
     margin-left: 5px;
-}
+} */
+
+
