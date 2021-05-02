@@ -137,7 +137,7 @@ export default function Post({
                       aria-describedby="alert-dialog-slide-description"
                     >
                       <DialogTitle id="alert-dialog-slide-title">
-                        {"Are you sure you want to Delete this post?"}
+                        {"Are you sure you want to Delete this Ad?"}
                       </DialogTitle>
 
                       <DialogActions>
@@ -161,7 +161,7 @@ export default function Post({
                   />
                 )}
               </div>
-              <img class="card-img-top" src={photoURL} alt="Card image cap" />
+              <img class="postPhoto" src={photoURL} alt="Card image cap" />
               <div class="card-body">
                 <div
                   className="price"

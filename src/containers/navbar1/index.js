@@ -17,7 +17,7 @@ export default function Navbar1() {
         }}
       >
         <label class="logo" style={{ flex: "50%" }}>
-          PenX
+          zopstore
         </label>
 
         {user ? (

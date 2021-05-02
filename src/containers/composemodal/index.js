@@ -234,10 +234,18 @@ function ComposeModal() {
           >
             <Fade in={open}>
               <div className={classes.paper}>
-                <div
-                  className="composeTop"
-                  // style={{ display: "flex", alignItems: "center" }}
-                >
+                <div className="composeTop">
+                  <p
+                    className="blankSpace"
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      color: "white",
+                    }}
+                  >
+                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                  </p>
+
                   <p
                     style={{
                       display: "flex",
@@ -277,18 +285,6 @@ function ComposeModal() {
                   className={classes.root}
                   style={{ margin: "0", padding: "0" }}
                 >
-                  {/* <TextField
-                    name="title"
-                    id="outlined-basic"
-                    label="Title"
-                    maxlength="25"
-                    variant="outlined"
-                    placeholder="Product Name or Title"
-                    value={title}
-                    autoComplete="off"
-                    onChange={(e) => setTitle(e.currentTarget.value)}
-                  /> */}
-                  {/* //check */}
                   <div class="form-group" style={{ margin: "0", padding: "0" }}>
                     <label for="exampleFormControlTextarea1"></label>
                     <p style={{ margin: "0", padding: "0" }}>Title*</p>
