@@ -33,7 +33,9 @@
 width: 96%;
 object-fit: cover;
 margin: 10px;
+/* max-height: 280px; */
 }
+
 
 /* to zoom card on hover */
 

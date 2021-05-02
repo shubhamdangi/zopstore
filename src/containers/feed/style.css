@@ -15,5 +15,39 @@
 }
 
 
+.paginationBttns {
+  width: 80%;
+  height: 50px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
 
+.paginationBttns a {
+  padding: 6px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid  #14406d;
+  color: #14406d;
+  cursor: pointer;
+  border-radius: 80px;
+  text-decoration: none;
+}
+
+.paginationBttns a:hover {
+  color: black;
+  background-color: #ddf3f5;
+}
+
+  .pagiArea{
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      
+  }
+
+.paginationActive{
+  color: #29bb89;
+}
   

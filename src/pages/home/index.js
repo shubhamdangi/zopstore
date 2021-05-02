@@ -5,6 +5,7 @@ import {
   Footer,
   Navbar1,
   Scroll,
+  Search,
 } from "../../containers";
 import Feed from "../../containers/feed";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +14,7 @@ function Home() {
     <div className="home" style={{ backgroundColor: "#f7f7f2" }}>
       <Navbar1 />
       <Carousel1 />
+      {/* <Search /> */}
       <ComposeModal />
       <Feed />
       <Scroll showBelow={550} />
