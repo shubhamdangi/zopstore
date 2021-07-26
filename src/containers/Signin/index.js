@@ -7,7 +7,8 @@ import Sig from "./sig.jpg";
 
 export default function Signin() {
   const [user, setUser] = useContext(UserContext).user;
-
+  const begin = "↪";
+  const end = "↩";
   const signinClick = async () => {
     let userBySignIn = await signInWithGoogle();
     if (userBySignIn) setUser(userBySignIn);
@@ -15,6 +16,7 @@ export default function Signin() {
 
   return (
     <div className="signin">
+      {begin}
       <Button onClick={signinClick}>
         <img
           src={Sig}
@@ -23,10 +25,11 @@ export default function Signin() {
             width: "220px",
             height: "45px",
             borderRadius: "100px",
-            border: "2px solid #333333",
+            border: "3px solid #333333",
           }}
         />
       </Button>
+      {end}
     </div>
   );
 }

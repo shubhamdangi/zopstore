@@ -395,6 +395,7 @@ function ComposeModal() {
                       <input
                         id="fileinput"
                         type="file"
+                        cursor="pointer"
                         accept="image/*"
                         onChange={handleChange}
                         style={{ display: "none" }}
