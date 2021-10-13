@@ -100,9 +100,9 @@ export default function Post({
 
   {
     return (
-      <div className="container">
+      <div className="container ">
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-4 product">
             <div class="card" style={{ width: "18em" }}>
               <div className="header">
                 <div className="info">

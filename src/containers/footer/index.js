@@ -16,7 +16,7 @@ export default function Footer() {
       <p style={{ color: "white" }}>
         {" "}
         <br />
-        Copyright 2021. <br />A Shubham Dangi Production
+        Copyright &copy; 2020-21. <br />A Shubham Dangi Production.
       </p>{" "}
     </div>
   );
