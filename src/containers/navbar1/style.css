@@ -1,22 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 
-  
-  nav{
-    background: #14406d;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "segoe ui";
+}
+
+.current > li {
+  border-bottom: 2px solid #f9f871;
+}
+
+@media only screen and (max-width: 600px) {
+  .dot {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .current > li {
+    color: #f05454;
+    border-bottom: none;
+  }
+}
+
+.nav1 {
+  font-family: "Open Sans", sans-serif;
+
+  height: 52px;
+  width: 100%;
+  background-color: #14406d;
+  /* position: relative; */
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;
+  z-index: 100;
+}
+
+.nav1 > .nav-header {
+  display: inline;
+}
+
+.nav1 > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #1a1c20;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav1 > .nav-btn {
+  display: none;
+}
+
+.nav1 > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  padding-right: 18px;
+}
+
+.nav1 > .nav-header > .nav-title > a {
+  display: inline-block;
+  font-size: 22px;
+  color: #f9f871;
+  padding: 0px 10px 10px 1px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav1 > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #f9f871;
+}
+
+.nav1 > .nav-links > a:hover {
+  color: #f9f871;
+}
+
+.nav1 > #nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav1 > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav1 > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
     height: 50px;
+    padding: 10px;
+  }
+  .nav1 > .nav-btn > label:hover,
+  .nav1 #nav-check:checked ~ .nav-btn > label {
+    cursor: pointer;
+    /* background-color: #fff600; */
+  }
+  .nav1 > .nav-btn > label > span {
+    background-color: #f9f871;
+    display: block;
+    margin: 5px 0px 5px 0px;
+    transition: 0.4s ease-in-out;
+    transform: none;
+    width: 30px;
+    height: 3px;
+  }
+  .nav1 > .nav-links {
+    position: absolute;
+    display: block;
     width: 100%;
-    position: fixed ;
+    background-color: #14406d;
+    height: 0px;
+    transition: all 0.6s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
     z-index: 100;
+    padding-left: 5px;
   }
-  label.logo{
-    color: #f9f871;
-    font-size: 4vh;
-    line-height: 80px;
-    padding: 0 0 0 20px;
-    font-weight: 600;
+
+  .nav1 > .nav-links > a {
+    display: block;
+    width: 100%;
   }
-  .userInfo{
-    float: right;
-    margin-right: 20px;
+
+  .nav1 > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
   }
-  
- 
+
+  .nav1 > #nav-check:checked ~ .nav-links {
+    height: 280px;
+    overflow-y: auto;
+  }
+
+  .nav1 > #nav-check:checked ~ .nav-btn span:nth-of-type(1) {
+    transform: translate(0%, 240%) rotate(-45deg);
+    background-color: #f9f871;
+  }
+
+  .nav1 > #nav-check:checked ~ .nav-btn span:nth-of-type(2) {
+    transform: rotate(45deg);
+    background-color: #f9f871;
+  }
+
+  .nav1 > #nav-check:checked ~ .nav-btn span:nth-of-type(3) {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav1 > .nav-links {
+    border-bottom: #f05454 solid 3px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .nav1 {
+    border-bottom: #f05454 solid 3px;
+  }
+}

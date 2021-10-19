@@ -62,6 +62,7 @@ function ComposeModal() {
   const [check, setCheck] = useState(true);
   const [openAlert, setOpenAlert] = React.useState(false);
   const classesAlert = useStyles();
+  var result_image_obj = null;
 
   const handleOpen = () => {
     setOpen(true);
@@ -89,8 +90,39 @@ function ComposeModal() {
   function handleUpload(e) {
     e.preventDefault();
     if (image) {
+      // compress image
+      function compress(image, quality, maxWidth, output_format, e) {
+        e.preventDefault();
+        var mime_type = "image/jpeg";
+        if (typeof output_format !== "undefined" && output_format == "png") {
+          mime_type = "image/png";
+        }
+
+        maxWidth = maxWidth || 1000;
+        var natW = image.naturalWidth;
+        var natH = image.naturalHeight;
+        var ratio = natH / natW;
+        if (natW > maxWidth) {
+          natW = maxWidth;
+          natH = ratio * maxWidth;
+        }
+
+        var cvs = document.createElement("canvas");
+        cvs.width = natW;
+        cvs.height = natH;
+
+        var ctx = cvs.getContext("2d").drawImage(image, 0, 0, natW, natH);
+        var newImageData = cvs.toDataURL(mime_type, quality / 100);
+        var result_image_obj = new Image();
+        result_image_obj.src = newImageData;
+        return result_image_obj;
+      }
+      handleUpload.compress = compress;
+      // compress image - end
       var imageName = makeid(10);
-      const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
+      const uploadTask = storage
+        .ref(`images/${imageName}.jpg`)
+        .put(result_image_obj);
 
       uploadTask.on(
         "state_changed",
@@ -281,7 +313,10 @@ function ComposeModal() {
                 </div>
                 <p id="transition-modal-description"></p>
                 <form
-                  onSubmit={handleUpload}
+                  onSubmit={() => {
+                    handleUpload();
+                    handleUpload.compress();
+                  }}
                   className={classes.root}
                   style={{ margin: "0", padding: "0" }}
                 >

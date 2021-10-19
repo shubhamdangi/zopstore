@@ -4,10 +4,13 @@ import Post from "../post";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactPaginate from "react-paginate";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Box from "@material-ui/core/Box";
 
 export default function Feed() {
   const [posts, setPosts] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
+  const [loading, setLoading] = useState(true);
   const usersPerPage = 12;
   const pagesVisited = pageNumber * usersPerPage;
 
@@ -54,8 +57,28 @@ export default function Feed() {
 
   // search
 
+  //loader
+
+  function greet() {
+    setLoading(false);
+  }
+  setTimeout(greet, 3000);
+
   return (
     <div className="feedFull">
+      <div
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        {loading ? (
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        ) : null}
+      </div>
       <div className="feed ">
         {displayUsers}
         <div className="pagiArea">
