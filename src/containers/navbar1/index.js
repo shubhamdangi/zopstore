@@ -92,7 +92,7 @@ export default function Navbar1() {
           )}
 
           <NavLink to="/cities" activeClassName="current" exact target="blank">
-            <li style={{ listStyleType: "none" }}> About</li>
+            <li style={{ listStyleType: "none" }}> Join Premium</li>
           </NavLink>
           <NavLink to="/states" activeClassName="current" exact target="blank">
             <li style={{ listStyleType: "none" }}> States</li>

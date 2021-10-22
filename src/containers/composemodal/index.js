@@ -14,6 +14,7 @@ import Alert from "@material-ui/lab/Alert";
 import IconButton from "@material-ui/core/IconButton";
 import Collapse from "@material-ui/core/Collapse";
 import Button from "@material-ui/core/Button";
+import CameraIcon from "@material-ui/icons/Camera";
 import CloseIcon from "@material-ui/icons/Close";
 // for alert end
 
@@ -62,7 +63,6 @@ function ComposeModal() {
   const [check, setCheck] = useState(true);
   const [openAlert, setOpenAlert] = React.useState(false);
   const classesAlert = useStyles();
-  var result_image_obj = null;
 
   const handleOpen = () => {
     setOpen(true);
@@ -90,39 +90,8 @@ function ComposeModal() {
   function handleUpload(e) {
     e.preventDefault();
     if (image) {
-      // compress image
-      function compress(image, quality, maxWidth, output_format, e) {
-        e.preventDefault();
-        var mime_type = "image/jpeg";
-        if (typeof output_format !== "undefined" && output_format == "png") {
-          mime_type = "image/png";
-        }
-
-        maxWidth = maxWidth || 1000;
-        var natW = image.naturalWidth;
-        var natH = image.naturalHeight;
-        var ratio = natH / natW;
-        if (natW > maxWidth) {
-          natW = maxWidth;
-          natH = ratio * maxWidth;
-        }
-
-        var cvs = document.createElement("canvas");
-        cvs.width = natW;
-        cvs.height = natH;
-
-        var ctx = cvs.getContext("2d").drawImage(image, 0, 0, natW, natH);
-        var newImageData = cvs.toDataURL(mime_type, quality / 100);
-        var result_image_obj = new Image();
-        result_image_obj.src = newImageData;
-        return result_image_obj;
-      }
-      handleUpload.compress = compress;
-      // compress image - end
       var imageName = makeid(10);
-      const uploadTask = storage
-        .ref(`images/${imageName}.jpg`)
-        .put(result_image_obj);
+      const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
 
       uploadTask.on(
         "state_changed",
@@ -248,7 +217,7 @@ function ComposeModal() {
               color="primary"
               onClick={handleOpen}
             >
-              Publish an AD &nbsp; <PublicIcon />
+              Publish an AD &nbsp; <CameraIcon />
             </Button>
           </div>
           <Modal
@@ -290,7 +259,7 @@ function ComposeModal() {
                       justifyContent: "space-between",
                     }}
                   >
-                    POST YOUR AD NOW.{" "}
+                    CREATE YOUR AD{" "}
                     <span
                       style={{
                         // display: "flex",
@@ -300,23 +269,21 @@ function ComposeModal() {
                       }}
                     >
                       <button
+                        style={{ border: "none", borderRadius: "30%" }}
                         type="button"
                         class="close"
                         data-dismiss="modal"
                         aria-label="Close"
                         onClick={handleClose}
                       >
-                        <span aria-hidden="true">&times;</span>
+                        <CloseIcon />
                       </button>
                     </span>
                   </p>
                 </div>
                 <p id="transition-modal-description"></p>
                 <form
-                  onSubmit={() => {
-                    handleUpload();
-                    handleUpload.compress();
-                  }}
+                  onSubmit={handleUpload}
                   className={classes.root}
                   style={{ margin: "0", padding: "0" }}
                 >
@@ -325,7 +292,7 @@ function ComposeModal() {
                     <p style={{ margin: "0", padding: "0" }}>Title*</p>
                     <textarea
                       value={title}
-                      style={{ margin: "0", padding: "3px" }}
+                      style={{ margin: "0", padding: "3px", resize: "none" }}
                       onChange={(e) => setTitle(e.currentTarget.value)}
                       name="title"
                       maxlength="40"
@@ -343,6 +310,7 @@ function ComposeModal() {
                       value={caption}
                       onChange={(e) => setCaption(e.currentTarget.value)}
                       name="caption"
+                      style={{ resize: "none" }}
                       maxlength="90"
                       class="form-control"
                       id="exampleFormControlTextarea1"
@@ -360,22 +328,25 @@ function ComposeModal() {
                         justifyContent: "left",
                       }}
                     >
-                      <input
-                        value={price}
-                        style={{
-                          margin: "0 3vw 0 0",
-                          width: "25vh",
-                          padding: "3px",
-                        }}
-                        onChange={(e) => setPrice(e.currentTarget.value)}
-                        name="price"
-                        autocomplete="off"
-                        maxlength="5"
-                        class="form-control"
-                        id="exampleFormControlTextarea1"
-                        rows="1"
-                        placeholder="Set Price in ₹"
-                      ></input>
+                      <div>
+                        <input
+                          value={price}
+                          style={{
+                            margin: "0 3vw 0 0",
+                            width: "20vh",
+                            padding: "3px",
+                          }}
+                          onChange={(e) => setPrice(e.currentTarget.value)}
+                          name="price"
+                          autocomplete="off"
+                          maxlength="5"
+                          class="form-control"
+                          id="exampleFormControlTextarea1"
+                          rows="1"
+                          placeholder="Set Price in ₹"
+                        ></input>
+                      </div>
+
                       <FormControlLabel
                         style={{ marginRight: "0" }}
                         control={
@@ -439,7 +410,7 @@ function ComposeModal() {
                         id="simple-modal-description"
                         style={{ color: "red", margin: "0 0 8px 0" }}
                       >
-                        image size should be Less than 1 MB*
+                        image size should be <u>Less than 500 KB*</u>
                       </p>
                     </div>
                     <div

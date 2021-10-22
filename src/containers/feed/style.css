@@ -1,19 +1,19 @@
-.feed{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-right: 0;
-
-    justify-content: center;
- 
+.feedfull {
+  min-height: 100vh;
 }
 
-.fee{
-    flex: 0 60% 20%;
-    
-    
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-right: 0;
+
+  justify-content: center;
 }
 
+.fee {
+  flex: 0 60% 20%;
+}
 
 .paginationBttns {
   width: 80%;
@@ -27,7 +27,7 @@
   padding: 6px;
   margin: 8px;
   border-radius: 5px;
-  border: 1px solid  #14406d;
+  border: 1px solid #14406d;
   color: #14406d;
   cursor: pointer;
   border-radius: 80px;
@@ -39,15 +39,15 @@
   background-color: #ddf3f5;
 }
 
-  .pagiArea{
-      margin-top: 50px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      
-  }
+.pagiArea {
+  position: sticky;
+  top: 100%;
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-.paginationActive{
+.paginationActive {
   color: #29bb89;
 }
-  

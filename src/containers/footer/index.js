@@ -11,6 +11,9 @@ export default function Footer() {
         textAlign: "center",
         background: "#14406d",
         paddingBottom: "100px",
+        marginTop: "auto",
+        position: "sticky",
+        top: "100%",
       }}
     >
       <p style={{ color: "white" }}>
