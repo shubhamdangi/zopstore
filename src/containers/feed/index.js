@@ -11,6 +11,7 @@ export default function Feed() {
   const [posts, setPosts] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [showPaginate, setShowPaginate] = useState(false);
   const usersPerPage = 12;
   const pagesVisited = pageNumber * usersPerPage;
 
@@ -64,6 +65,11 @@ export default function Feed() {
   }
   setTimeout(greet, 3000);
 
+  function showPagi() {
+    setShowPaginate(true);
+  }
+  setTimeout(showPagi, 8000);
+
   return (
     <div className="feedFull">
       <div
@@ -81,19 +87,21 @@ export default function Feed() {
       </div>
       <div className="feed ">
         {displayUsers}
-        <div className="pagiArea">
-          <ReactPaginate
-            previousLabel={"<"}
-            nextLabel={">"}
-            pageCount={pageCount}
-            onPageChange={changePage}
-            containerClassName={"paginationBttns"}
-            previousLinkClassName={"previousBttn"}
-            nextLinkClassName={"nextBttn"}
-            disabledClassName={"paginationDisabled"}
-            activeClassName={"paginationActive"}
-          />
-        </div>
+        {showPaginate ? (
+          <div className="pagiArea">
+            <ReactPaginate
+              previousLabel={"<"}
+              nextLabel={">"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"paginationBttns"}
+              previousLinkClassName={"previousBttn"}
+              nextLinkClassName={"nextBttn"}
+              disabledClassName={"paginationDisabled"}
+              activeClassName={"paginationActive"}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
     // </div>

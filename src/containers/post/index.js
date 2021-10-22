@@ -214,12 +214,16 @@ export default function Post({
                   style={{ placeItems: "center", textAlign: "center" }}
                 >
                   {user ? (
-                    <button
-                      type="button"
-                      onClick={yesclick}
-                      class="btn btn-outline-info btn-lg btn-block"
-                    >
-                      {yes}
+                    <button style={{ border: "none" }}>
+                      <a
+                        className="btn btn-primary btn-xlg"
+                        href={`tel:${contact}`}
+                      >
+                        Click to Call User
+                        {/* <span className="glyphicon glyphicon-earphone">
+                          {yes}
+                        </span> */}
+                      </a>
                     </button>
                   ) : (
                     <button

@@ -13,7 +13,10 @@ import Feed from "../../containers/feed";
 import "bootstrap/dist/css/bootstrap.min.css";
 function Home() {
   return (
-    <div className="home" style={{ backgroundColor: "#f7f7f2" }}>
+    <div
+      className="home"
+      style={{ backgroundColor: "#f7f7f2", minHeight: "100vh" }}
+    >
       <Router>
         <Navbar1 />
         <Carousel1 />

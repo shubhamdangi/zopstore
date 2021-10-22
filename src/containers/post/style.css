@@ -30,6 +30,12 @@
   padding-left: 7px;
 }
 
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  box-shadow: none !important;
+}
+
 .dp {
   height: 35px;
   border-radius: 25px;
