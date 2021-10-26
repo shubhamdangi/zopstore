@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import "./style.css";
 import { db, storage } from "../../firebase";
 import { UserContext } from "../../contexts/user";
+import { Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -108,7 +109,9 @@ export default function Post({
                 <div className="info">
                   <img class="dp" src={profileUrl} alt="dp" />
                   <div className="nameTime">
-                    <p style={{ margin: "0", padding: "0" }}>@{username}</p>
+                    <p style={{ margin: "0", padding: "0", color: "black" }}>
+                      @{username}
+                    </p>
 
                     <h6
                       style={{
@@ -161,7 +164,7 @@ export default function Post({
                   />
                 )}
               </div>
-              <img class="postPhoto" src={photoURL} alt="Card image cap" />
+              <img class="postPhoto" src={photoURL} alt={title} />
               <div class="card-body">
                 <div
                   className="price"
@@ -172,7 +175,7 @@ export default function Post({
                   }}
                 >
                   <div className="price1" style={{ alignItems: "center" }}>
-                    <h5 class="card-title">
+                    <h6 class="card-title" style={{ fontSize: "22px" }}>
                       {price === "FREE" ? (
                         <div
                           style={{
@@ -189,40 +192,51 @@ export default function Post({
                       ) : (
                         <p style={{ margin: "0", padding: "0" }}>₹ {price}</p>
                       )}
-                    </h5>
+                    </h6>
                   </div>
-                  <IconButton style={{ margin: "0", padding: "0" }}>
-                    <WhatsappShareButton title={title} separator=" ">
-                      <WhatsAppIcon />
-                    </WhatsappShareButton>
-                  </IconButton>
+                  <a
+                    style={{
+                      textDecoration: "none",
+                      color: "#29BB89",
+                      marginTop: "-20px",
+                      padding: "0",
+                    }}
+                    href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20Ad%20on%20Penx!%20I'm%20interested%20to%20buy%20your%20product.%20`}
+                  >
+                    <WhatsAppIcon />
+                  </a>
                 </div>
-                <p
+                <div
+                  className="title-caption"
                   style={{
-                    margin: "0",
-                    padding: "0",
-                    textTransform: "uppercase",
+                    alignItems: "left",
+                    marginLeft: "-21px",
+                    paddingLeft: "0",
                   }}
                 >
-                  {" "}
-                  {title}
-                </p>
-                <p>{caption}</p>
+                  <p
+                    style={{
+                      textTransform: "uppercase",
+                      marginBottom: "0",
+                      color: "black",
+                    }}
+                  >
+                    {title}
+                  </p>
+                  <p style={{ color: "black" }}>{caption}</p>
+                </div>
 
                 <div
                   className="mao"
                   style={{ placeItems: "center", textAlign: "center" }}
                 >
                   {user ? (
-                    <button style={{ border: "none" }}>
+                    <button style={{ border: "none", focus: "" }}>
                       <a
                         className="btn btn-primary btn-xlg"
                         href={`tel:${contact}`}
                       >
                         Click to Call User
-                        {/* <span className="glyphicon glyphicon-earphone">
-                          {yes}
-                        </span> */}
                       </a>
                     </button>
                   ) : (
