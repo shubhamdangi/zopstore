@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import {
   Carousel1,
@@ -17,15 +16,13 @@ function Home() {
       className="home"
       style={{ backgroundColor: "#f7f7f2", minHeight: "100vh" }}
     >
-      <Router>
-        <Navbar1 />
-        <Carousel1 />
-        {/* <Search /> */}
-        <ComposeModal />
-        <Feed />
-        <Scroll showBelow={550} />
-        <Footer />
-      </Router>
+      {/* <Navbar1 /> */}
+      <Carousel1 />
+      {/* <Search /> */}
+      <ComposeModal />
+      <Feed />
+      <Scroll showBelow={550} />
+      {/* <Footer /> */}
     </div>
   );
 }

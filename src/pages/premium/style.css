@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+.pagedata {
+  /* font-family: "segoe ui"; */
+  font-family: "Karla", sans-serif;
+}
+
+.PremiumHead {
+  text-align: center;
+}
+
+.PremiumImage {
+  margin-top: 65px;
+  width: 250px;
+  /* height: 460px; */
+}
+
+@media only screen and (max-width: 600px) {
+  .PremiumImage {
+    margin-top: 65px;
+    width: 200px;
+    /* height: 280px; */
+  }
+}
+
+p {
+  margin-left: 24px;
+}

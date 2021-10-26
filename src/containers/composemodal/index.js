@@ -217,7 +217,7 @@ function ComposeModal() {
               color="primary"
               onClick={handleOpen}
             >
-              Publish an AD &nbsp; <CameraIcon />
+              Publish your own ad &nbsp; <CameraIcon />
             </Button>
           </div>
           <Modal
