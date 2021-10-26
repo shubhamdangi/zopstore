@@ -21,7 +21,11 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
-import { WhatsappShareButton } from "react-share";
+
+//alert
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+//alert end
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -39,10 +43,21 @@ export default function Post({
   comments,
   time,
 }) {
+  //alert
+  const [open, setOpen] = React.useState(false);
+
   const [user, setUser] = useContext(UserContext).user;
   const [no, setNo] = useState("Call to make an offer");
   const [yes, setYes] = useState("Call to make an offer");
   const [open1, setOpen1] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   function noclick() {
     setNo("Sign in to Call User");
@@ -54,11 +69,11 @@ export default function Post({
 
   //modal begin
 
-  const handleClickOpen = () => {
+  const handleClickOpen1 = () => {
     setOpen1(true);
   };
 
-  const handleClose = () => {
+  const handleClose1 = () => {
     setOpen1(false);
   };
   //modal end
@@ -128,14 +143,14 @@ export default function Post({
 
                 {user && username === uname ? (
                   <div>
-                    <IconButton onClick={handleClickOpen}>
+                    <IconButton onClick={handleClickOpen1}>
                       <DeleteIcon />
                     </IconButton>
                     <Dialog
                       open={open1}
                       TransitionComponent={Transition}
                       keepMounted
-                      onClose={handleClose}
+                      onClose={handleClose1}
                       aria-labelledby="alert-dialog-slide-title"
                       aria-describedby="alert-dialog-slide-description"
                     >
@@ -144,7 +159,7 @@ export default function Post({
                       </DialogTitle>
 
                       <DialogActions>
-                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button onClick={handleClose1}>Cancel</Button>
                         <Button onClick={deletePost} color="secondary">
                           Delete
                         </Button>
@@ -194,17 +209,52 @@ export default function Post({
                       )}
                     </h6>
                   </div>
-                  <a
-                    style={{
-                      textDecoration: "none",
-                      color: "#29BB89",
-                      marginTop: "-20px",
-                      padding: "0",
-                    }}
-                    href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20Ad%20on%20Penx!%20I'm%20interested%20to%20buy%20your%20product.%20`}
-                  >
-                    <WhatsAppIcon />
-                  </a>
+                  {user ? (
+                    <a
+                      style={{
+                        textDecoration: "none",
+                        color: "#29BB89",
+                        marginTop: "-20px",
+                        padding: "0",
+                      }}
+                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20Ad%20on%20zopstore!,%20I'm%20interested%20to%20buy%20your%20product.%20`}
+                    >
+                      <WhatsAppIcon />
+                    </a>
+                  ) : (
+                    <>
+                      <p
+                        onClick={handleClickOpen}
+                        style={{
+                          textDecoration: "none",
+                          color: "#29BB89",
+                          marginTop: "-20px",
+                          padding: "0",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <WhatsAppIcon />
+                      </p>{" "}
+                      <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                      >
+                        <DialogTitle id="alert-dialog-title">
+                          {
+                            "Please Login to send a WhatsApp message to the owner."
+                          }
+                        </DialogTitle>
+
+                        <DialogActions>
+                          <Button onClick={handleClose} color="primary">
+                            Close
+                          </Button>
+                        </DialogActions>
+                      </Dialog>{" "}
+                    </>
+                  )}
                 </div>
                 <div
                   className="title-caption"

@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 import PremiumImage from "../media/premium2.png";
 import Button from "@material-ui/core/Button";
-import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 // import StarsIcon from '@material-ui/icons/Stars';
 import StarsIcon from "@material-ui/icons/Star";
 import { Link } from "react-router-dom";
@@ -19,7 +18,7 @@ function Premium() {
           />
           <h4>Get a Premium membership</h4>
           <hr />
-          <h3>Become a Premium member for just </h3>
+          <h4>Become a Premium member for just </h4>
           <span style={{ fontSize: "60px" }}>₹49/year</span> <br /> <br />
           <Link to="/premium/apply">
             <Button
