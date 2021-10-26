@@ -39,7 +39,7 @@ function About() {
               <li>Directly contact the owner through WhatsApp or Call</li>
               <li>
                 Sell/Hand out your previous sem Notes, Books, Manuals, and
-                almost everything to your juniors
+                almost anything to your juniors
               </li>
               <li>
                 Sell/Hand out your Hostel essentials which you don't need

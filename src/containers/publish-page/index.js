@@ -4,32 +4,16 @@ import DialogActions from "@material-ui/core/DialogActions";
 
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { signInWithGoogle } from "../../services/auth";
-// import { UserContext } from "../../contexts/user";
 
-//new
 import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import PublicIcon from "@material-ui/icons/Public";
+
 import firebase from "firebase";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { withStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
-// for alert
-import Alert from "@material-ui/lab/Alert";
-import IconButton from "@material-ui/core/IconButton";
-import Collapse from "@material-ui/core/Collapse";
 import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/Camera";
-import CloseIcon from "@material-ui/icons/Close";
-// for alert end
-
 import { UserContext } from "../../contexts/user";
-import Signin from "../Signin";
 import "./style.css";
-import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import makeid from "../../algo/algo";
 import { db, storage } from "../../firebase";
 import "bootstrap/dist/css/bootstrap.min.css";
