@@ -1,11 +1,14 @@
 import "./App.css";
-import { About, Home, Premium, Contact, Faq } from "./pages/";
+import { About, Home, Premium, Contact, Faq, Careers } from "./pages/";
 import { UserContextProvider } from "./contexts/user";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Footer, Navbar1, Publish } from "./containers";
 import ReqPremium from "./pages/reqPremium";
-// import Publish from "./pages/publish-page";
+// Google Analytics id: UA-211293240-1
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-211293240-1");
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
             </Route>
             <Route exact path="/faq">
               <Faq />
+            </Route>
+            <Route exact path="/careers">
+              <Careers />
             </Route>
           </Switch>
         </Router>
