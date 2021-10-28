@@ -9,16 +9,16 @@
   text-align: center;
 }
 
-.PremiumImage {
+.ContactImage {
   margin-top: 25px;
-  width: 200px;
+  width: 150px;
   /* height: 460px; */
 }
 
 @media only screen and (max-width: 600px) {
-  .PremiumImage {
+  .ContactImage {
     margin-top: 25px;
-    width: 180px;
+    width: 140px;
     /* height: 280px; */
   }
 }

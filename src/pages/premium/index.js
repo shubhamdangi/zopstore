@@ -46,7 +46,6 @@ function Premium() {
             <p style={{ alignItems: "center" }}>
               <StarsIcon /> Early access to occasional sales
             </p>{" "}
-            <br /> <br />
           </div>
         </div>
       </div>

@@ -93,28 +93,10 @@ function About() {
               </li>{" "}
               <br />
               To get started, Login to zopstore and start posting you own Ads
-              and buy stuff at a negligible cost.
+              and buy stuff at a negligible cost. <br /> <br />
             </p>{" "}
-            <br />
           </div>
         </div>
-        {/* <div className="benefits" style={{ textAlign: "center" }}>
-          <h1>Premium Benefits</h1>
-          <div style={{ textAlign: "match-parent", margin: "0 auto" }}>
-            <p style={{ alignItems: "center" }}>
-              <StarsIcon /> Get FLAT 10% Off on all products
-            </p>
-            <p style={{ alignItems: "center" }}>
-              <StarsIcon /> Premium Badge on all your Ads
-            </p>
-            <p style={{ alignItems: "center" }}>
-              <StarsIcon /> Feature your ads on the top feed
-            </p>
-            <p style={{ alignItems: "center" }}>
-              <StarsIcon /> Early access to occasional sales
-            </p>
-          </div>
-        </div> */}
       </div>
     </>
   );

@@ -10,14 +10,14 @@
 }
 
 .PremiumImage {
-  margin-top: 65px;
-  width: 250px;
+  margin-top: 18px;
+  width: 240px;
   /* height: 460px; */
 }
 
 @media only screen and (max-width: 600px) {
   .PremiumImage {
-    margin-top: 65px;
+    margin-top: 10px;
     width: 200px;
     /* height: 280px; */
   }
