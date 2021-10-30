@@ -108,7 +108,7 @@ function ComposeModal() {
           console.log(error);
         },
         () => {
-          //get the download url and upload post info
+          //get the download url and upload post info and compress the image
 
           storage
             .ref("images")
