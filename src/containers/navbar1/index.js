@@ -26,7 +26,7 @@ export default function Navbar1() {
 
         <div class="nav-header">
           <div class="nav-title">
-            <a href="/">
+            <NavLink to="/">
               <p
                 style={{
                   textDecoration: "none",
@@ -38,7 +38,7 @@ export default function Navbar1() {
               >
                 <img src={Logo} className="logo" alt="logo" />
               </p>
-            </a>
+            </NavLink>
           </div>
         </div>
 
