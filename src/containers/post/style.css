@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
 .card {
+  font-family: "Karla", sans-serif;
+
   background-color: white;
   max-width: 600px;
   width: 90vw;
@@ -72,4 +76,8 @@
     -webkit-transform: scale(1);
     transform: scale(1.05);
   } */
+}
+
+.title-caption {
+  font-size: 17px;
 }
