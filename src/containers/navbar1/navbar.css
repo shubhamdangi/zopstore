@@ -14,13 +14,13 @@ body {
   border-bottom: 1px solid #f9f871;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   .dot {
     display: none;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   .current > li {
     color: #f05454;
     border-bottom: none;
@@ -91,7 +91,7 @@ h5:hover {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .nav1 > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -162,7 +162,7 @@ h5:hover {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   /* .pc-none {
     margin-top: -90px;
     padding-top: 0;
@@ -194,7 +194,7 @@ h5:hover {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 720px) {
   .pc-none {
     display: none;
   }

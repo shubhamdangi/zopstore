@@ -13,7 +13,7 @@
   /* height: 300px; */
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 820px) {
   .banner1 {
     display: none;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 821px) {
   .banner2 {
     display: none;
   }

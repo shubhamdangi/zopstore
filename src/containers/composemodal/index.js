@@ -170,10 +170,10 @@ function ComposeModal() {
       try {
         Resizer.imageFileResizer(
           e.target.files[0],
-          400,
-          400,
+          480,
+          480,
           "JPEG",
-          50,
+          80,
           0,
           (uri) => {
             console.log(uri);
@@ -351,11 +351,11 @@ function ComposeModal() {
                       onChange={(e) => setCaption(e.currentTarget.value)}
                       name="caption"
                       style={{ resize: "none" }}
-                      maxlength="90"
+                      maxlength="100"
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
-                      placeholder="Enter Poduct Description"
+                      placeholder="Enter Product Description"
                     ></textarea>
                   </div>
                   <div class="form-group" style={{ margin: "0", padding: "0" }}>
@@ -396,7 +396,7 @@ function ComposeModal() {
                             name="checkedG"
                           />
                         }
-                        label="Donate for Free."
+                        label="Donate for Free"
                       />
                     </div>
                   </div>
@@ -441,7 +441,7 @@ function ComposeModal() {
                                 id="simple-modal-description"
                                 style={{ margin: "0 0 8px 0" }}
                               >
-                                Select Image to upload
+                                Select Image to upload*
                               </p>
                             </Typography>
                           ) : null}

@@ -190,7 +190,7 @@ export default function Post({
                   }}
                 >
                   <div className="price1" style={{ alignItems: "center" }}>
-                    <h6 class="card-title" style={{ fontSize: "22px" }}>
+                    <h6 class="card-title" style={{ fontSize: "25px" }}>
                       {price === "FREE" ? (
                         <div
                           style={{
