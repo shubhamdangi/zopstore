@@ -179,7 +179,7 @@ export default function Post({
                   />
                 )}
               </div>
-              <img class="postPhoto" src={photoURL} alt={title} />
+              <img class="postPhoto" src={photoURL} alt={`${title}'s Image`} />
               <div class="card-body">
                 <div
                   className="price"
@@ -217,7 +217,7 @@ export default function Post({
                         marginTop: "-20px",
                         padding: "0",
                       }}
-                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20Ad%20on%20zopstore!,%20I'm%20interested%20to%20buy%20your%20product.%20`}
+                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20Ad%20on%20https://zopstore.live%0AI'm%20interested%20in%20the%20*${title}*%20you%20have%20posted.%20`}
                     >
                       <WhatsAppIcon />
                     </a>
@@ -243,7 +243,7 @@ export default function Post({
                       >
                         <DialogTitle id="alert-dialog-title">
                           {
-                            "Please Login to send a WhatsApp message to the owner."
+                            "Please login to send a WhatsApp message to the seller."
                           }
                         </DialogTitle>
 

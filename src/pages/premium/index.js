@@ -5,12 +5,36 @@ import Button from "@material-ui/core/Button";
 // import StarsIcon from '@material-ui/icons/Stars';
 import StarsIcon from "@material-ui/icons/Star";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import Alert from "@material-ui/lab/Alert";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
 
 function Premium() {
+  const classes = useStyles();
   return (
     <>
       <div className="pagedata">
         <div className="PremiumHead">
+          <div
+            className={classes.root}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              padding: "10px 0 15px 0",
+            }}
+          >
+            <Alert severity="error">
+              NOTE: This feature will be available shortly.
+            </Alert>
+          </div>
           <img
             src={PremiumImage}
             alt="Premium-image"
