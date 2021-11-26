@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 
 function About() {
+  useEffect(() => {
+    document.title = "Zopstore | About";
+  }, []);
+
   return (
     <>
       <div className="pagedata">

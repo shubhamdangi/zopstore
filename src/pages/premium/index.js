@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 import PremiumImage from "../media/premium2.png";
 import Button from "@material-ui/core/Button";
@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Premium() {
+  useEffect(() => {
+    document.title = "Zopstore | Go Premium";
+  }, []);
+
   const classes = useStyles();
   return (
     <>

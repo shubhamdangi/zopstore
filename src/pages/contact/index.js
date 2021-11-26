@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 import ContactImage from "./contact-us.png";
 
 function Contact() {
+  useEffect(() => {
+    document.title = "Zopstore | Contact Us";
+  }, []);
+
   return (
     <>
       <div className="pagedata">

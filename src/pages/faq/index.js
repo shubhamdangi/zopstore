@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TreeView from "@material-ui/lab/TreeView";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -20,6 +20,10 @@ const useStyles = makeStyles({
 });
 
 export default function FileSystemNavigator() {
+  useEffect(() => {
+    document.title = "Zopstore | FAQs";
+  }, []);
+
   const classes = useStyles();
 
   return (
