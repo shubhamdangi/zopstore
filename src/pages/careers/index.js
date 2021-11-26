@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Team from "./team.png";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Careers() {
+  useEffect(() => {
+    document.title = "Zopstore | Careers";
+  }, []);
+
   const classes = useStyles();
   const [loading, setLoading] = useState(true);
 

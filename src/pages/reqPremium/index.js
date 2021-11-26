@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ReqPremium() {
+  useEffect(() => {
+    document.title = "Zopstore | Apply Premium";
+  }, []);
+
   const classes = useStyles();
   const classesAlert = useStylesAlert();
   const [loading, setLoading] = useState(true);
