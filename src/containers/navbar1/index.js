@@ -124,6 +124,16 @@ export default function Navbar1() {
               <Publish />
             </li>
           </h5>
+          <a
+            href="/premium"
+            onClick={location.reload}
+            activeClassName="current"
+          >
+            <li className="fields" style={{ listStyleType: "none" }}>
+              {" "}
+              Lost & Found...
+            </li>
+          </a>
 
           <a
             href="/premium"
