@@ -243,7 +243,7 @@ export default function Post({
                       >
                         <DialogTitle id="alert-dialog-title">
                           {
-                            "Please login to send a WhatsApp message to the seller."
+                            "Please login to send a WhatsApp message to the user."
                           }
                         </DialogTitle>
 
