@@ -453,6 +453,7 @@ function ComposeModal() {
                       onChange={(e) => setContact(e.currentTarget.value)}
                       name="contact"
                       autocomplete="off"
+                      minLength="10"
                       maxlength="10"
                       class="form-control"
                       id="exampleFormControlTextarea1"
