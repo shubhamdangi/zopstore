@@ -415,7 +415,8 @@ function ComposeModal() {
                       onChange={(e) => setContact(e.currentTarget.value)}
                       name="contact"
                       autocomplete="off"
-                      maxlength="10"
+                      minlength="10"
+                      maxlength="10" 
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
@@ -516,7 +517,8 @@ function ComposeModal() {
           </div>
         </>
       ) : (
-        <Signin />
+        <div style={{textAlign:'center', padding:'15px 0 0 0'}}> <h6 className="signPost">SIGN IN TO POST YOUR AD</h6>
+        <Signin /> </div>
       )}
     </div>
   );
