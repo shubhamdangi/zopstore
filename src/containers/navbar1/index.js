@@ -93,7 +93,7 @@ export default function Navbar1() {
                   fontSize: "15px",
                   fontWeight: "bold",
                   marginTop: "0px",
-                  marginBottom: "8px",
+                  marginBottom: "7px",
                   border: "1px solid white",
                 }}
                 variant="contained"
@@ -140,7 +140,7 @@ export default function Navbar1() {
             onClick={location.reload}
             activeClassName="current"
           >
-            <li className="fields" style={{ listStyleType: "none" }}>
+            <li className="fields joinp" style={{ listStyleType: "none" }}>
               {" "}
               Join Premium
             </li>

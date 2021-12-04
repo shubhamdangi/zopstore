@@ -309,12 +309,13 @@ function ComposeModal() {
                       justifyContent: "space-between",
                     }}
                   >
-                    REPORT LOST/FOUND ITEMS{" "}
+                    REPORT LOST/FOUND ITEMS &nbsp; &nbsp;
                     <span
                       style={{
                         // display: "flex",
                         float: "right",
-                        // margin: "0",
+                        marginTop: "-5px",
+                        marginRight:"-5px"
                         // justifyContent: "right",
                       }}
                     >
@@ -330,10 +331,12 @@ function ComposeModal() {
                       </button>
                     </span>
                   </p>
-                </div>{" "}
-                <hr />
+                </div>
                 <p id="transition-modal-description"></p>
-                <p style={{ margin: "20px 0 -10px 0", padding: "0" }}>
+
+                <p style={{ margin: "35px 0 -17px 0", padding: "0" }}>
+               
+
                   Type* &nbsp;
                   <span>
                     <Radio
@@ -544,14 +547,14 @@ function ComposeModal() {
                   </IconButton>
                 }
               >
-                Ad Posted Successfully! But it may take few Seconds to appear,
-                Do Not refresh or go back till you see your Ad below.
+                Report Posted Successfully! But it may take few Seconds to appear,
+                Do Not refresh or go back till you see it below.
               </Alert>
             </Collapse>
           </div>
         </>
-      ) : (
-        <Signin />
+      ) : ( <div style={{textAlign:'center'}}> <h6 className="signReport">SIGN IN TO REPORT NOW.</h6>
+        <Signin /> </div>
       )}
     </div>
   );
