@@ -103,7 +103,7 @@ export default function PostLF({
       });
 
     // 2. delete the post from firestore
-    db.collection("postsLF")
+    db.collection("postsFL")
       .doc(id)
       .delete()
       .then(function () {
@@ -236,7 +236,7 @@ export default function PostLF({
                         marginTop: "-20px",
                         padding: "0",
                       }}
-                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20post%20on%20https://zopstore.live%0ARegarding%20*${title}*%20would%20like%20to%20contact%20you.%20`}
+                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20post%20on%20https://zopstore.live%0ARegarding%20*${title}*%20,%20would%20like%20to%20contact%20you.%20`}
                     >
                       <WhatsAppIcon />
                     </a>
