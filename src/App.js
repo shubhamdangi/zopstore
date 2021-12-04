@@ -7,6 +7,7 @@ import { Footer, Navbar1, Publish } from "./containers";
 import ReqPremium from "./pages/reqPremium";
 // Google Analytics id: UA-211293240-1
 import ReactGA from "react-ga";
+import Lostfound from "./containers/Lost-Found";
 ReactGA.initialize("UA-211293240-1");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route exact path="/careers">
               <Careers />
+            </Route>
+            <Route exact path="/lostfound">
+              <Lostfound />
             </Route>
           </Switch>
         </Router>
