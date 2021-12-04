@@ -65,11 +65,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ComposeModal() {
-  const [selectedValue, setSelectedValue] = React.useState("lost");
+  const [selectedValue, setSelectedValue] = React.useState("");
 
   const handleChangeRadio = (event) => {
     setSelectedValue(event.target.value);
-    setPrice(selectedValue);
+    setPrice(event.target.value);
   };
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
