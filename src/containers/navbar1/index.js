@@ -125,13 +125,13 @@ export default function Navbar1() {
             </li>
           </h5>
           <a
-            href="/premium"
+            href="/lostfound"
             onClick={location.reload}
             activeClassName="current"
           >
             <li className="fields" style={{ listStyleType: "none" }}>
               {" "}
-              Lost & Found...
+              Lost & Found
             </li>
           </a>
 
