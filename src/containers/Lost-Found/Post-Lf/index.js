@@ -47,8 +47,8 @@ export default function PostLF({
   const [open, setOpen] = React.useState(false);
 
   const [user, setUser] = useContext(UserContext).user;
-  const [no, setNo] = useState("Call to make an offer");
-  const [yes, setYes] = useState("Call to make an offer");
+  const [no, setNo] = useState("Call user now");
+  const [yes, setYes] = useState("Call call now");
   const [open1, setOpen1] = useState(false);
 
   const handleClickOpen = () => {
@@ -236,7 +236,7 @@ export default function PostLF({
                         marginTop: "-20px",
                         padding: "0",
                       }}
-                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20Ad%20on%20https://zopstore.live%0AI'm%20interested%20in%20the%20*${title}*%20you%20have%20posted.%20`}
+                      href={`http://wa.me/+91-${contact}?text=Hey,%20Saw%20your%20post%20on%20https://zopstore.live%0ARegarding%20*${title}*%20would%20like%20to%20contact%20you.%20`}
                     >
                       <WhatsAppIcon />
                     </a>
@@ -305,7 +305,7 @@ export default function PostLF({
                         className="btn btn-primary btn-xlg"
                         href={`tel:${contact}`}
                       >
-                        Click to Call User
+                        Click to Call User 
                       </a>
                     </button>
                   ) : (
