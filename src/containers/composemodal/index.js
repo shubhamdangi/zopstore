@@ -17,7 +17,7 @@ import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/Camera";
 import CloseIcon from "@material-ui/icons/Close";
 // for alert end
-
+import Typography from "@material-ui/core/Typography";
 import { UserContext } from "../../contexts/user";
 import Signin from "../Signin";
 import "./style.css";
@@ -25,6 +25,7 @@ import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import makeid from "../../algo/algo";
 import { db, storage } from "../../firebase";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Resizer from "react-image-file-resizer";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -58,10 +59,11 @@ function ComposeModal() {
   const [price, setPrice] = useState("");
   const [contact, setContact] = useState("");
   const [time, setTime] = useState("");
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
   const [progress, setProgess] = useState(0);
-  const [check, setCheck] = useState(true);
+  // const [check, setCheck] = useState(true);
   const [openAlert, setOpenAlert] = React.useState(false);
+  const [img, setImg] = useState(null);
   const classesAlert = useStyles();
 
   const handleOpen = () => {
@@ -89,9 +91,9 @@ function ComposeModal() {
   // to upload the image at firetore, genereate download url
   function handleUpload(e) {
     e.preventDefault();
-    if (image) {
+    if (img) {
       var imageName = makeid(10);
-      const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
+      const uploadTask = storage.ref(`images/${imageName}.jpg`).put(img);
 
       uploadTask.on(
         "state_changed",
@@ -108,7 +110,7 @@ function ComposeModal() {
           console.log(error);
         },
         () => {
-          //get the download url and upload post info
+          //get the download url and upload post info and compress the image
 
           storage
             .ref("images")
@@ -134,7 +136,7 @@ function ComposeModal() {
           setPrice("");
           setContact("");
           setProgess(0);
-          setImage(null);
+          setImg(null);
 
           //   document.getElementById("imagePreview").style.display = "none";
         }
@@ -143,18 +145,56 @@ function ComposeModal() {
   }
 
   // to take the image and preview it in upload section
-  function handleChange(e) {
+
+  // function handleChange2(e) {
+  //   if (e.target.files[0]) {
+  //     setImage(e.target.files[0]);
+
+  //     var SelectedImageSRC = URL.createObjectURL(e.target.files[0]);
+
+  //     var imagePreview = document.getElementById("imagePreview");
+
+  //     imagePreview.src = SelectedImageSRC;
+  //     imagePreview.style.display = "block";
+  //   }
+  // }
+
+  // image resize begin
+  const handleChange = (e) => {
+    let fileInput = false;
     if (e.target.files[0]) {
-      setImage(e.target.files[0]);
-
-      var SelectedImageSRC = URL.createObjectURL(e.target.files[0]);
-
-      var imagePreview = document.getElementById("imagePreview");
-
-      imagePreview.src = SelectedImageSRC;
-      imagePreview.style.display = "block";
+      console.log(e.target.files[0]);
+      fileInput = true;
     }
-  }
+    if (fileInput) {
+      try {
+        Resizer.imageFileResizer(
+          e.target.files[0],
+          480,
+          480,
+          "JPEG",
+          80,
+          0,
+          (uri) => {
+            console.log(uri);
+            setImg(uri);
+          },
+          "file",
+          200,
+          200
+        );
+
+        var SelectedImageSRC = URL.createObjectURL(e.target.files[0]);
+        var imagePreview = document.getElementById("imagePreview");
+
+        imagePreview.src = SelectedImageSRC;
+        imagePreview.style.display = "block";
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
+  // image resize end
 
   const monthNames = [
     "Jan",
@@ -311,11 +351,11 @@ function ComposeModal() {
                       onChange={(e) => setCaption(e.currentTarget.value)}
                       name="caption"
                       style={{ resize: "none" }}
-                      maxlength="90"
+                      maxlength="100"
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
-                      placeholder="Enter Poduct Description"
+                      placeholder="Enter Product Description"
                     ></textarea>
                   </div>
                   <div class="form-group" style={{ margin: "0", padding: "0" }}>
@@ -356,7 +396,7 @@ function ComposeModal() {
                             name="checkedG"
                           />
                         }
-                        label="Donate for Free."
+                        label="Donate for Free"
                       />
                     </div>
                   </div>
@@ -375,7 +415,8 @@ function ComposeModal() {
                       onChange={(e) => setContact(e.currentTarget.value)}
                       name="contact"
                       autocomplete="off"
-                      maxlength="10"
+                      minlength="10"
+                      maxlength="10" 
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
@@ -387,7 +428,7 @@ function ComposeModal() {
                       className="compose__file"
                       style={{
                         display: "flex",
-                        justifyContent: "space-evenly",
+                        // justifyContent: "space-evenly",
                         padding: "0 3vw 0 0",
                         alignItems: "center",
                       }}
@@ -395,6 +436,16 @@ function ComposeModal() {
                       <Button>
                         <label htmlFor="fileinput">
                           <AddAPhotoIcon />
+                          {img == null ? (
+                            <Typography style={{ textTransform: "none" }}>
+                              <p
+                                id="simple-modal-description"
+                                style={{ margin: "0 0 8px 0" }}
+                              >
+                                Select Image to upload*
+                              </p>
+                            </Typography>
+                          ) : null}
                         </label>
                       </Button>
 
@@ -406,17 +457,8 @@ function ComposeModal() {
                         onChange={handleChange}
                         style={{ display: "none" }}
                       />
-                      <p
-                        id="simple-modal-description"
-                        style={{ color: "red", margin: "0 0 8px 0" }}
-                      >
-                        image size should be <u>Less than 500 KB*</u>
-                      </p>
                     </div>
-                    <div
-                      className="uploadBtn"
-                      style={{ textAlign: "right", paddingTop: "10px" }}
-                    >
+                    <div className="uploadBtn" style={{ textAlign: "right" }}>
                       <Button
                         onClick={() => {
                           time1();
@@ -431,7 +473,7 @@ function ComposeModal() {
                         color="secondary"
                         type="submit"
                         disabled={
-                          !(caption && image && title && price && contact)
+                          !(caption && img && title && price && contact)
                         }
                       >
                         Upload {progress != 0 ? progress : ""} <PublicIcon />
@@ -475,7 +517,8 @@ function ComposeModal() {
           </div>
         </>
       ) : (
-        <Signin />
+        <div style={{textAlign:'center', padding:'15px 0 0 0'}}> <h6 className="signPost">SIGN IN TO POST YOUR AD</h6>
+        <Signin /> </div>
       )}
     </div>
   );

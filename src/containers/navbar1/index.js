@@ -26,7 +26,7 @@ export default function Navbar1() {
 
         <div class="nav-header">
           <div class="nav-title">
-            <a href="/">
+            <NavLink to="/">
               <p
                 style={{
                   textDecoration: "none",
@@ -38,7 +38,7 @@ export default function Navbar1() {
               >
                 <img src={Logo} className="logo" alt="logo" />
               </p>
-            </a>
+            </NavLink>
           </div>
         </div>
 
@@ -93,7 +93,7 @@ export default function Navbar1() {
                   fontSize: "15px",
                   fontWeight: "bold",
                   marginTop: "0px",
-                  marginBottom: "8px",
+                  marginBottom: "7px",
                   border: "1px solid white",
                 }}
                 variant="contained"
@@ -124,13 +124,23 @@ export default function Navbar1() {
               <Publish />
             </li>
           </h5>
+          <a
+            href="/lostfound"
+            onClick={location.reload}
+            activeClassName="current"
+          >
+            <li className="fields" style={{ listStyleType: "none" }}>
+              {" "}
+              Lost & Found
+            </li>
+          </a>
 
           <a
             href="/premium"
             onClick={location.reload}
             activeClassName="current"
           >
-            <li className="fields" style={{ listStyleType: "none" }}>
+            <li className="fields joinp" style={{ listStyleType: "none" }}>
               {" "}
               Join Premium
             </li>

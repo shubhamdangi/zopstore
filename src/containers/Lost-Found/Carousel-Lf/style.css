@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+.banner-containerLF {
+  /* margin-top: 80px; */
+  text-align: center;
+  font-family: "Karla", sans-serif;
+
+}
+
+.bannerLF {
+  margin-top: 80px;
+
+  width: 180px;
+  height: 180px;
+  /* margin-right: -10px; */
+}
+
+.bannerLFM {
+  margin-top: 72px;
+
+  width: 160px;
+  height: 155px;
+  /* margin-right: -10px; */
+}
+
+
+@media screen and (max-width: 820px) {
+  .bannerLF {
+    display: none;
+  }
+  /* .banner-containerLF {
+    margin-top: 70px;
+  } */
+}
+
+@media screen and (min-width: 821px) {
+  .bannerLFM {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+.signReport{
+margin-bottom: -25px;
+font-family: "Karla", sans-serif;
+
+}
+
+#imagePreview {
+  display: none;
+  height: 80px;
+  margin: 0px 0px;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 400px) {
+  .blankSpace {
+    display: none;
+  }
+  .composeTop {
+    margin-bottom: -25px;
+  }
+}
+
+textarea:focus,
+textarea:active:focus,
+textarea.active:focus {
+  box-shadow: none !important;
+}
+
+input:focus,
+input:active:focus,
+input.active:focus {
+  box-shadow: none !important;
+}

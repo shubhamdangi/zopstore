@@ -1,6 +1,6 @@
 import React from "react";
-import Banner from "./banner.jpg";
-import Banner2 from "./banner2.jpg";
+import Banner from "./banner-pc.png";
+import Banner2 from "./mini.png";
 import "./style.css";
 
 export default function Carousel() {

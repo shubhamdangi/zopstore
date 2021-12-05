@@ -213,7 +213,7 @@ export default function AlertDialog() {
       {user ? null : (
         <div>
           <p style={{ cursor: "pointer" }} onClick={handleClickOpen}>
-            Publish Free Ad
+            Post Free Ad
           </p>
           <Dialog
             open={open}
@@ -222,7 +222,7 @@ export default function AlertDialog() {
             aria-describedby="alert-dialog-description"
           >
             <DialogTitle id="alert-dialog-title">
-              {"You must Sign in to publish an Ad"}
+              {"You must sign in to publish an Ad."}
             </DialogTitle>
 
             <DialogActions>

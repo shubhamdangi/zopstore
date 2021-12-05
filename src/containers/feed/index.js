@@ -12,7 +12,7 @@ export default function Feed() {
   const [pageNumber, setPageNumber] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showPaginate, setShowPaginate] = useState(false);
-  const usersPerPage = 12;
+  const usersPerPage = 16;
   const pagesVisited = pageNumber * usersPerPage;
 
   useEffect(() => {

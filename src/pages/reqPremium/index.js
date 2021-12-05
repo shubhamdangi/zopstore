@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Alert from "@material-ui/lab/Alert";
+
+const useStylesAlert = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,7 +23,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ReqPremium() {
+  useEffect(() => {
+    document.title = "Zopstore | Apply Premium";
+  }, []);
+
   const classes = useStyles();
+  const classesAlert = useStylesAlert();
   const [loading, setLoading] = useState(true);
 
   function greet() {
@@ -25,6 +40,18 @@ function ReqPremium() {
     <>
       <div className="gform">
         <br /> <br /> <br />
+        <div
+          className={classesAlert.root}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Alert severity="error">
+            This feature is unavailable at the moment, But you can still apply
+            and we will notify you once the feature goes live.
+          </Alert>
+        </div>
         <div className="pc">
           <div
             style={{
