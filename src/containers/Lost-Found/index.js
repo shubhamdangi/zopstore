@@ -18,7 +18,7 @@ function Lostfound() {
       <CarouselLF />
       <ComposeModalLF />
       <FeedLF />
-      {/* <Scroll showBelow={550} /> */}
+      <Scroll showBelow={500} />
     </div>
   );
 }

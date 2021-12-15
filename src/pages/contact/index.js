@@ -55,6 +55,13 @@ function Contact() {
         </a>{" "}
         &nbsp; &nbsp; 
         <a
+          style={{ textDecoration: "none", color: "black", fontSize: "21px" }}
+          href="https://www.instagram.com/ishubhamdangi"
+        >
+         <i class="fab fa-instagram"></i>
+        </a>{" "}
+        &nbsp; &nbsp; 
+        <a
           style={{ textDecoration: "none", color: "black", fontSize: "20px" }}
           href="mailto:contact.zopstore@gmail.com"
         >

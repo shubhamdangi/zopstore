@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+
+
 import "./style.css";
 
 function About() {
@@ -54,7 +58,11 @@ function About() {
                 To get started, Login to zopstore and start posting you own Ads
                 and buying stuff at a negligible cost.
               </span>
+              <br />
+
+              <Link style={{textDecoration:'none'}} to="/share"> <WhatsAppIcon /> Share on WhatsApp </Link>
             </p>
+
           </div>
           <div className="content-mobile">
             <p
@@ -97,9 +105,12 @@ function About() {
               </li>{" "}
               <br />
               To get started, Login to zopstore and start posting you own Ads
-              and buy stuff at a negligible cost. <br /> <br />
+              and buy stuff at a negligible cost. <br /> 
+              <br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<Link style={{textDecoration:'none'}} to="/share"> <WhatsAppIcon /> Share on WhatsApp </Link>
             </p>{" "}
-          </div>
+          </div> 
+          
         </div>
       </div>
     </>

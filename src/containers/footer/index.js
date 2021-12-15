@@ -35,6 +35,13 @@ export default function Footer() {
         &nbsp; &nbsp;
         <a
           style={{ textDecoration: "none", color: "white", fontSize: "18px" }}
+          href="https://www.instagram.com/ishubhamdangi"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>{" "}
+        &nbsp; &nbsp;
+        <a
+          style={{ textDecoration: "none", color: "white", fontSize: "18px" }}
           href="mailto:contact.zopstore@gmail.com"
         >
           <i class="fas fa-envelope"></i> <br />

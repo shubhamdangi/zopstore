@@ -4,3 +4,4 @@ export { default as About } from "./About";
 export { default as Contact } from "./contact";
 export { default as Faq } from "./faq";
 export { default as Careers } from "./careers";
+export {default as Share} from './share';

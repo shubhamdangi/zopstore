@@ -1,5 +1,5 @@
 import "./App.css";
-import { About, Home, Premium, Contact, Faq, Careers } from "./pages/";
+import { About, Home, Premium, Contact, Faq, Careers, Share } from "./pages/";
 import { UserContextProvider } from "./contexts/user";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -44,6 +44,9 @@ function App() {
             </Route>
             <Route exact path="/lostfound">
               <Lostfound />
+            </Route>
+            <Route exact path="/share">
+              <Share />
             </Route>
           </Switch>
         </Router>
