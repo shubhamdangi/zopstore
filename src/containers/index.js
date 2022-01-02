@@ -6,3 +6,4 @@ export { default as Carousel1 } from "./carousel";
 export { default as Footer } from "./footer";
 export { default as SearchBar } from "./search";
 export { default as Publish } from "./publish-page";
+export { default as ScrollToTop } from "./ScrollToTop";

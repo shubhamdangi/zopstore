@@ -29,8 +29,8 @@ function About() {
               your college/hostel campus.
             </p>
             <p style={{ fontSize: "20px", textAlign: "left" }}>
-              Currently we have opened up zopstore for popular consumption at:{" "}
-              <br /> <span style={{ fontWeight: "bold" }}>DBIT Bangalore.</span>
+              Currently we have opened up zopstore for popular usage at:{" "}
+              <br /> <span style={{ fontWeight: "bold" }}>Don Bosco Institute of Technology, Bangalore.</span>
               <br />
               <i>(we are expanding to more colleges soon..)</i>
             </p>
@@ -42,16 +42,19 @@ function About() {
                 Notes, Books, Stationary, Hostel essentials etc.
               </li>
               <li>
-                Buy pre-owned things from your seniors/peers at a trivial cost
+                Post about any lost or found item at the campus.
               </li>
-              <li>Directly contact the owner through WhatsApp or Call</li>
+              <li>
+                Buy pre-owned things from your seniors/peers at a trivial cost.
+              </li>
+              <li>Directly contact the owner through WhatsApp or Call.</li>
               <li>
                 Sell/Hand out your previous sem Notes, Books, Manuals, and
-                almost anything to your juniors
+                almost anything to your juniors.
               </li>
               <li>
                 Sell/Hand out your Hostel essentials which you don't need
-                anymore
+                anymore.
               </li>{" "}
               <br />
               <span style={{ marginLeft: "-20px" }}>
@@ -76,7 +79,7 @@ function About() {
               your college/hostel campus.
             </p>
             <p style={{ fontSize: "20px", textAlign: "left" }}>
-              Currently we have opened up zopstore for popular consumption at:{" "}
+              Currently we have opened up zopstore for popular usage at:{" "}
               <br />{" "}
               <span style={{ fontWeight: "bold" }}>DBIT Bangalore. </span>
               <br />
@@ -90,6 +93,9 @@ function About() {
               <li>
                 Sell/Hand out your unessential things to your juniors/peers eg:
                 Notes, Books, Stationary, Hostel essentials etc.
+              </li>
+              <li>
+                Post about any lost or found item at the campus.
               </li>
               <li>
                 Buy pre-owned things from your seniors/peers at a trivial cost

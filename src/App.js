@@ -3,7 +3,7 @@ import { About, Home, Premium, Contact, Faq, Careers, Share } from "./pages/";
 import { UserContextProvider } from "./contexts/user";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Footer, Navbar1, Publish } from "./containers";
+import { Footer,ScrollToTop, Navbar1, Publish } from "./containers";
 import ReqPremium from "./pages/reqPremium";
 // Google Analytics id: UA-211293240-1
 import ReactGA from "react-ga";
@@ -16,6 +16,7 @@ function App() {
     <UserContextProvider>
       <div className="App">
         <Router>
+        <ScrollToTop>
           <Navbar1 />
           <Switch>
             <Route exact path="/">
@@ -49,8 +50,9 @@ function App() {
               <Share />
             </Route>
           </Switch>
-        </Router>
         <Footer />
+        </ScrollToTop>
+        </Router>
       </div>
     </UserContextProvider>
   );

@@ -8,7 +8,6 @@ import Logo from "./zopstore2.png";
 import { useLocation } from "react-router";
 import Publish from "../publish-page";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Navbar1() {
   const location = useLocation();
@@ -17,7 +16,6 @@ export default function Navbar1() {
     let userBySignIn = await signInWithGoogle();
     if (userBySignIn) setUser(userBySignIn);
   };
-  // const reload = () => location.reload();
 
   return (
     <>
@@ -62,7 +60,6 @@ export default function Navbar1() {
                 padding: "5px 0 0 0",
               }}
             >
-              {/* <p>Hi,</p> */}
               <p
                 style={{
                   margin: "3px 5px 0 0",
@@ -105,13 +102,7 @@ export default function Navbar1() {
             </>
           )}
 
-          {/* <NavLink
-            to="/publish"
-            // onClick={location.reload}
-            activeClassName="current"
-          >
-            <li style={{ listStyleType: "none" }}> Post Free Ad</li>
-          </NavLink> */}
+          
           <h5 className="publish-mobile">
             <li className="fields" style={{ listStyleType: "none" }}>
               {" "}
@@ -124,33 +115,32 @@ export default function Navbar1() {
               <Publish />
             </li>
           </h5>
-          <a
-            href="/lostfound"
-            onClick={location.reload}
+          <Link
+            to="/lostfound"
             activeClassName="current"
           >
             <li className="fields" style={{ listStyleType: "none" }}>
               {" "}
               Lost & Found
             </li>
-          </a>
+          </Link>
 
-          <a
-            href="/premium"
-            onClick={location.reload}
+          <Link
+            to="/premium"
+            // onClick={location.reload}
             activeClassName="current"
           >
             <li className="fields joinp" style={{ listStyleType: "none" }}>
               {" "}
               Join Premium
             </li>
-          </a>
-          <a href="/about" onClick={location.reload} activeClassName="current">
+          </Link>
+          <Link to="/about"  activeClassName="current">
             <li className="fields2" style={{ listStyleType: "none" }}>
               {" "}
               About
             </li>
-          </a>
+          </Link>
         </div>
       </div>
     </>

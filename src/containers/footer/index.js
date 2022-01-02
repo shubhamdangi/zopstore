@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
+
 
 export default function Footer() {
   return (
@@ -46,38 +48,38 @@ export default function Footer() {
         >
           <i class="fas fa-envelope"></i> <br />
         </a>
-        zopstore &copy; 2021 <br />
-        <a
+        zopstore &copy; 2021-22 <br />
+        <Link
           style={{ textDecoration: "none", color: "white", fontSize: "18px" }}
-          href="/about"
+          to="/about"
         >
           {" "}
           About
-        </a>{" "}
+        </Link>{" "}
         &nbsp;{" "}
-        <a
+        <Link
           style={{ textDecoration: "none", color: "white", fontSize: "18px" }}
-          href="/contact"
+          to="/contact"
         >
           {" "}
           Contact
-        </a>{" "}
+        </Link>{" "}
         &nbsp;{" "}
-        <a
+        <Link
           style={{ textDecoration: "none", color: "white", fontSize: "18px" }}
-          href="/faq"
+          to="/faq"
         >
           {" "}
           FAQ
-        </a>{" "}
+        </Link>{" "}
         &nbsp;
-        <a
+        <Link
           style={{ textDecoration: "none", color: "white", fontSize: "18px" }}
-          href="/careers"
+          to="/careers"
         >
           {" "}
           Careers
-        </a>{" "}
+        </Link>{" "}
         <br />A Shubham Dangi Production
       </p>
     </div>

@@ -47,7 +47,7 @@ function Premium() {
           <h4>Get a Premium membership</h4>
           <hr />
           <h4>Become a Premium member for just </h4>
-          <span style={{ fontSize: "60px" }}>₹49/year</span> <br /> <br />
+          <span style={{ fontSize: "60px" }}>₹149/year</span> <br /> <br />
           <Link to="/premium/apply">
             <Button
               variant="contained"

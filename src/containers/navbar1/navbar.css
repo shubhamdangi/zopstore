@@ -11,7 +11,7 @@ body {
 }
 
 .current > li {
-  border-bottom: 1px solid #f9f871;
+  border-bottom: 10px solid #f9f871;
 }
 
 @media only screen and (max-width: 720px) {
