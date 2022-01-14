@@ -1,7 +1,7 @@
 <br/>
 <p align="center"> <img src="https://user-images.githubusercontent.com/51415346/149559891-9cd27384-4fc6-4ec5-8154-0c90d0426f2b.png" width="368" height="112"> </img>  </p>
 
-<div align="center"><h2><a href="https://zopstore.live">visit: zopstore</a></h2>
+<div align="center"><h2><a href="https://zopstore.live">visit: zopstore.live</a></h2>
 </div>
 
 
