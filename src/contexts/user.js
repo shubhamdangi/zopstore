@@ -11,5 +11,3 @@ export const UserContextProvider = (props) => {
     </UserContext.Provider>
   );
 };
-
-// export { userContext, UserContextProvider };

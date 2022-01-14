@@ -157,27 +157,10 @@ function ComposeModal() {
           setContact("");
           setProgess(0);
           setImg(null);
-
-          //   document.getElementById("imagePreview").style.display = "none";
         }
       );
     }
   }
-
-  // to take the image and preview it in upload section
-
-  // function handleChange2(e) {
-  //   if (e.target.files[0]) {
-  //     setImage(e.target.files[0]);
-
-  //     var SelectedImageSRC = URL.createObjectURL(e.target.files[0]);
-
-  //     var imagePreview = document.getElementById("imagePreview");
-
-  //     imagePreview.src = SelectedImageSRC;
-  //     imagePreview.style.display = "block";
-  //   }
-  // }
 
   // image resize begin
   const handleChange = (e) => {
@@ -315,7 +298,7 @@ function ComposeModal() {
                         // display: "flex",
                         float: "right",
                         marginTop: "-5px",
-                        marginRight:"-5px"
+                        marginRight: "-5px",
                         // justifyContent: "right",
                       }}
                     >
@@ -335,8 +318,6 @@ function ComposeModal() {
                 <p id="transition-modal-description"></p>
 
                 <p style={{ margin: "35px 0 -17px 0", padding: "0" }}>
-               
-
                   Type* &nbsp;
                   <span>
                     <Radio
@@ -548,14 +529,18 @@ function ComposeModal() {
                   </IconButton>
                 }
               >
-                Report Posted Successfully! But it may take few Seconds to appear,
-                Do Not refresh or go back till you see it below.
+                Report Posted Successfully! But it may take few Seconds to
+                appear, Do Not refresh or go back till you see it below.
               </Alert>
             </Collapse>
           </div>
         </>
-      ) : ( <div style={{textAlign:'center'}}> <h6 className="signReport">SIGN IN TO REPORT NOW.</h6>
-        <Signin /> </div>
+      ) : (
+        <div style={{ textAlign: "center" }}>
+          {" "}
+          <h6 className="signReport">SIGN IN TO REPORT NOW.</h6>
+          <Signin />{" "}
+        </div>
       )}
     </div>
   );

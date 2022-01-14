@@ -1,5 +1,4 @@
-//to generate a unique file name
-
+//to generate a unique file name for the images
 export default function makeid(l) {
   var text = "";
   var char_list =

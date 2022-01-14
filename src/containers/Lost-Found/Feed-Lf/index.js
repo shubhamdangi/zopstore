@@ -23,7 +23,9 @@ export default function Feed() {
           snapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-          }))
+          })),
+          setLoading(false),
+          setTimeout(setLoading, 200)
         );
       });
   }, []);
@@ -56,19 +58,10 @@ export default function Feed() {
     setPageNumber(selected);
   };
 
-  // search
-
-  //loader
-
-  function greet() {
-    setLoading(false);
-  }
-  setTimeout(greet, 3000);
-
   function showPagi() {
     setShowPaginate(true);
   }
-  setTimeout(showPagi, 8000);
+  setTimeout(showPagi, 2500);
 
   return (
     <div className="feedFull">
@@ -104,7 +97,5 @@ export default function Feed() {
         ) : null}
       </div>
     </div>
-    // </div>
-    // </div>
   );
 }

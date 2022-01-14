@@ -15,6 +15,7 @@ export default function Feed() {
   const usersPerPage = 16;
   const pagesVisited = pageNumber * usersPerPage;
 
+  // get data from firestore and map through timestamp
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
@@ -23,7 +24,9 @@ export default function Feed() {
           snapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-          }))
+          })),
+          setLoading(false),
+          setTimeout(setLoading, 2000)
         );
       });
   }, []);
@@ -56,19 +59,10 @@ export default function Feed() {
     setPageNumber(selected);
   };
 
-  // search
-
-  //loader
-
-  function greet() {
-    setLoading(false);
-  }
-  setTimeout(greet, 3000);
-
   function showPagi() {
     setShowPaginate(true);
   }
-  setTimeout(showPagi, 8000);
+  setTimeout(showPagi, 4000);
 
   return (
     <div className="feedFull">
@@ -104,7 +98,5 @@ export default function Feed() {
         ) : null}
       </div>
     </div>
-    // </div>
-    // </div>
   );
 }

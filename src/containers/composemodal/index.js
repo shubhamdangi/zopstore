@@ -16,7 +16,7 @@ import Collapse from "@material-ui/core/Collapse";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/Camera";
 import CloseIcon from "@material-ui/icons/Close";
-// for alert end
+// alert end
 import Typography from "@material-ui/core/Typography";
 import { UserContext } from "../../contexts/user";
 import Signin from "../Signin";
@@ -27,6 +27,7 @@ import { db, storage } from "../../firebase";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Resizer from "react-image-file-resizer";
 
+// material ui compose model
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -59,9 +60,7 @@ function ComposeModal() {
   const [price, setPrice] = useState("");
   const [contact, setContact] = useState("");
   const [time, setTime] = useState("");
-  // const [image, setImage] = useState(null);
   const [progress, setProgess] = useState(0);
-  // const [check, setCheck] = useState(true);
   const [openAlert, setOpenAlert] = React.useState(false);
   const [img, setImg] = useState(null);
   const classesAlert = useStyles();
@@ -88,7 +87,7 @@ function ComposeModal() {
     checked: {},
   })((props) => <Checkbox color="default" {...props} />);
 
-  // to upload the image at firetore, genereate download url
+  // to upload the image at firetore and genereate download url
   function handleUpload(e) {
     e.preventDefault();
     if (img) {
@@ -110,7 +109,7 @@ function ComposeModal() {
           console.log(error);
         },
         () => {
-          //get the download url and upload post info and compress the image
+          //get the download url and upload post info and compress the image size
 
           storage
             .ref("images")
@@ -137,27 +136,12 @@ function ComposeModal() {
           setContact("");
           setProgess(0);
           setImg(null);
-
-          //   document.getElementById("imagePreview").style.display = "none";
         }
       );
     }
   }
 
   // to take the image and preview it in upload section
-
-  // function handleChange2(e) {
-  //   if (e.target.files[0]) {
-  //     setImage(e.target.files[0]);
-
-  //     var SelectedImageSRC = URL.createObjectURL(e.target.files[0]);
-
-  //     var imagePreview = document.getElementById("imagePreview");
-
-  //     imagePreview.src = SelectedImageSRC;
-  //     imagePreview.style.display = "block";
-  //   }
-  // }
 
   // image resize begin
   const handleChange = (e) => {
@@ -210,16 +194,6 @@ function ComposeModal() {
     "Nov",
     "Dec",
   ];
-
-  // const weekday1 = [
-  //   "Sunday",
-  //   "Monday",
-  //   "Tuesday",
-  //   "Wednesday",
-  //   "Thursday",
-  //   "Friday",
-  //   "Saturday",
-  // ];
 
   var currentdate = new Date();
   var datetime =
@@ -416,7 +390,7 @@ function ComposeModal() {
                       name="contact"
                       autocomplete="off"
                       minlength="10"
-                      maxlength="10" 
+                      maxlength="10"
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="1"
@@ -517,8 +491,11 @@ function ComposeModal() {
           </div>
         </>
       ) : (
-        <div style={{textAlign:'center', padding:'15px 0 0 0'}}> <h6 className="signPost">SIGN IN TO POST YOUR AD</h6>
-        <Signin /> </div>
+        <div style={{ textAlign: "center", padding: "15px 0 0 0" }}>
+          {" "}
+          <h6 className="signPost">SIGN IN TO POST YOUR AD</h6>
+          <Signin />{" "}
+        </div>
       )}
     </div>
   );

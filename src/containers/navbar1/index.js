@@ -5,12 +5,9 @@ import { NavLink, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { signInWithGoogle } from "../../services/auth";
 import Logo from "./zopstore2.png";
-import { useLocation } from "react-router";
 import Publish from "../publish-page";
 
-
 export default function Navbar1() {
-  const location = useLocation();
   const [user, setUser] = useContext(UserContext).user;
   const signinClick = async () => {
     let userBySignIn = await signInWithGoogle();
@@ -102,7 +99,6 @@ export default function Navbar1() {
             </>
           )}
 
-          
           <h5 className="publish-mobile">
             <li className="fields" style={{ listStyleType: "none" }}>
               {" "}
@@ -115,27 +111,20 @@ export default function Navbar1() {
               <Publish />
             </li>
           </h5>
-          <Link
-            to="/lostfound"
-            activeClassName="current"
-          >
+          <Link to="/lostfound" activeClassName="current">
             <li className="fields" style={{ listStyleType: "none" }}>
               {" "}
               Lost & Found
             </li>
           </Link>
 
-          <Link
-            to="/premium"
-            // onClick={location.reload}
-            activeClassName="current"
-          >
+          <Link to="/premium" activeClassName="current">
             <li className="fields joinp" style={{ listStyleType: "none" }}>
               {" "}
               Join Premium
             </li>
           </Link>
-          <Link to="/about"  activeClassName="current">
+          <Link to="/about" activeClassName="current">
             <li className="fields2" style={{ listStyleType: "none" }}>
               {" "}
               About
