@@ -36,7 +36,7 @@ You can use zopstore to:
 
 
 <br>
-<b>Styling</b>: CSS, Material-UI and BootStrap
+<b>Styling</b>: CSS, Material-UI, Canva and Bootstrap
 <br>
 <b>Database</b>: Firebase Firestore
 <br>
