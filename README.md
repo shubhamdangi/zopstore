@@ -8,8 +8,9 @@
 
 ## Workflow:
 <p align="center"><img src='https://user-images.githubusercontent.com/51415346/149612689-cd14096a-1d3e-499c-ac69-39073899a23a.png'></img></p>
+<hr/>
 
-You can use zopstore to:
+<b>You can use zopstore to:</b>
 - Sell/Hand out your unessential things to your juniors/peers eg: Notes, Books, Stationary, Hostel essentials etc.
 - Post about any lost or found item at the campus.
 - Buy pre-owned things from your seniors/peers at a trivial cost.
