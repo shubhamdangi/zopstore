@@ -1,11 +1,16 @@
 <br/>
 <p align="center"> <img src="https://user-images.githubusercontent.com/51415346/149559891-9cd27384-4fc6-4ec5-8154-0c90d0426f2b.png" width="368" height="112"> </img>  </p>
 
-<div align="center"><h2><a href="https://zopstore.live">visit: zopstore.live</a></h2>
-</div>
+<!-- <div align="center"><h2><a href="https://zopstore.live">visit: zopstore.live</a></h2>
+</div> -->
 
 
-#### Zopstore is an online platfrom where students can buy or sell anything at their college/hostel campus.
+<h3 align="center">Zopstore is an online platfrom where students can buy or sell anything at their college/hostel campus.</h3>
+<hr/>
+
+## Workflow:
+<p align="center"><img src='https://user-images.githubusercontent.com/51415346/149612689-cd14096a-1d3e-499c-ac69-39073899a23a.png'></img></p>
+
 You can use zopstore to:
 - Sell/Hand out your unessential things to your juniors/peers eg: Notes, Books, Stationary, Hostel essentials etc.
 - Post about any lost or found item at the campus.
@@ -15,6 +20,7 @@ You can use zopstore to:
 - Sell/Hand out your Hostel essentials which you don't need anymore.
 
 # Tech Stack
+
 [![version](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAF)](#)
 [![Firebase](https://img.shields.io/badge/firebase-20232A.svg?style=for-the-badge&logo=firebase)](#)
 [![react](https://img.shields.io/badge/Material--UI-20232A?style=for-the-badge&logo=material-ui&logoColor=0081CB
