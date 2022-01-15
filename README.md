@@ -1,8 +1,6 @@
 <br/>
 <p align="center"> <img src="https://user-images.githubusercontent.com/51415346/149559891-9cd27384-4fc6-4ec5-8154-0c90d0426f2b.png" width="368" height="112"> </img>  </p>
 
-<!-- <div align="center"><h2><a href="https://zopstore.live">visit: zopstore.live</a></h2>
-</div> -->
 
 
 <h3 align="center">Zopstore is an online platfrom where students can buy or sell anything at their college/hostel campus.</h3>
@@ -57,6 +55,9 @@ You can use zopstore to:
 - Add to wishlist
 - Request a product
 <br>
+
+<div align="center"><h1>&#127759; visit:<a href="https://zopstore.live"> zopstore.live</a></h1>
+</div>
 <br>
 
 [![LinkedIn](https://img.shields.io/static/v1.svg?label=connect&message=@ishubhamdangi&color=grey&logo=linkedin&style=flat&logoColor=white&colorA=blue)](https://www.linkedin.com/in/ishubhamdangi/) [![Twitter](https://img.shields.io/static/v1.svg?label=connect&message=@ishubhamdangi&color=grey&logo=twitter&style=flat&logoColor=white&colorA=blue)](https://twitter.com/ishubhamdangi) [![Instagram](https://img.shields.io/static/v1.svg?label=follow&message=@ishubhamdangi&color=grey&logo=instagram&style=flat&logoColor=white&colorA=blue)](https://www.instagram.com/ishubhamdangi/) 
