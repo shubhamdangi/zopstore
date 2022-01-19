@@ -3,11 +3,12 @@
 
 
 
+
 <h3 align="center">Zopstore is an online platfrom where students can buy or sell anything at their college/hostel campus.</h3>
 <hr/>
 
 ## Workflow:
-<p align="center"><img src='https://user-images.githubusercontent.com/51415346/149612689-cd14096a-1d3e-499c-ac69-39073899a23a.png'></img></p>
+<p align="center"><img src='https://user-images.githubusercontent.com/51415346/150171041-c06ccfe2-12f8-486c-ad24-53966dd41615.png'></img></p>
 <hr/>
 
 <b>You can use zopstore to:</b>
